@@ -29,19 +29,25 @@ namespace GymMe.Repositories
             return Database.Users.FirstOrDefault(u => u.UserEmail.Equals(email, StringComparison.OrdinalIgnoreCase));
         }
 
+        public static User Get(string name, string pass)
+        {
+            return Database.Users.FirstOrDefault(u => u.UserName.Equals(name, StringComparison.OrdinalIgnoreCase) && u.UserPass.Equals(pass));
+        }
+
         public static void Insert(User user)
         {
             Database.Users.Add(user);
             Database.SaveChanges();
         }
 
-        public static User Update(int id, string name, string email, DateTime dob, string gender, string role)
+        public static User Update(int id, string name, string pass, string email, DateTime dob, string gender, string role)
         {
             User user = Get(id);
 
             if (user != null)
             {
                 user.UserName = name;
+                user.UserPass = pass;
                 user.UserEmail = email;
                 user.UserDOB = dob;
                 user.UserGender = gender;

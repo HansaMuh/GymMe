@@ -14,60 +14,25 @@ namespace GymMe.Repositories
             get => DatabaseSingleton.Instance;
         }
 
-        public static List<Supplement> GetAll()
+        public static List<SupplementType> GetAll()
         {
-            return Database.Supplements.ToList();
+            return Database.SupplementTypes.ToList();
         }
 
-        public static Supplement Get(int id)
+        public static SupplementType Get(int id)
         {
-            return Database.Supplements.FirstOrDefault(s => s.SupplementID == id);
+            return Database.SupplementTypes.FirstOrDefault(s => s.SupplementTypeID == id);
         }
 
-        public static Supplement Get(string name)
+        public static SupplementType Get(string name)
         {
-            return Database.Supplements.FirstOrDefault(s => s.SupplementName.Equals(name, StringComparison.OrdinalIgnoreCase));
+            return Database.SupplementTypes.FirstOrDefault(s => s.SupplementTypeName.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
-        public static void Insert(Supplement supplement)
+        public static void Insert(SupplementType supplementType)
         {
-            Database.Supplements.Add(supplement);
+            Database.SupplementTypes.Add(supplementType);
             Database.SaveChanges();
-        }
-
-        public static Supplement Update(int id, string name, DateTime expiryDate, int price, int typeId)
-        {
-            Supplement supplement = Get(id);
-
-            if (supplement != null)
-            {
-                supplement.SupplementName = name;
-                supplement.SupplementExpiryDate = expiryDate;
-                supplement.SupplementPrice = price;
-                supplement.SupplementTypeID = typeId;
-                Database.SaveChanges();
-
-                return supplement;
-            }
-            else
-            {
-                return null;
-            }
-        }
-
-        public static bool Delete(int id)
-        {
-            Supplement supplement = Get(id);
-
-            if (supplement != null)
-            {
-                Database.Supplements.Remove(supplement);
-                Database.SaveChanges();
-
-                return true;
-            }
-
-            return false;
         }
 
     }

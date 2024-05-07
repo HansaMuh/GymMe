@@ -92,8 +92,22 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Enumerations\OrderStatusType.cs" />
     <Compile Include="Enumerations\UserGenderType.cs" />
     <Compile Include="Enumerations\UserRoleType.cs" />
+    <Compile Include="Factories\CartFactory.cs" />
+    <Compile Include="Factories\TransactionHeaderFactory.cs" />
+    <Compile Include="Factories\TransactionDetailFactory.cs" />
+    <Compile Include="Factories\SupplementFactory.cs" />
+    <Compile Include="Factories\SupplementTypeFactory.cs" />
+    <Compile Include="Factories\UserFactory.cs" />
+    <Compile Include="Handlers\TransactionHeaderHandler.cs" />
+    <Compile Include="Handlers\TransactionDetailHandler.cs" />
+    <Compile Include="Handlers\CartHandler.cs" />
+    <Compile Include="Handlers\SupplementHandler.cs" />
+    <Compile Include="Handlers\SupplementTypeHandler.cs" />
+    <Compile Include="Handlers\UserHandler.cs" />
     <Compile Include="Models\Cart.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
@@ -127,6 +141,7 @@
     <Compile Include="Models\User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="Modules\Response.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DatabaseSingleton.cs" />
     <Compile Include="Repositories\SupplementTypeRepository.cs" />
