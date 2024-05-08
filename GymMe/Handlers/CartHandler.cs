@@ -2,7 +2,6 @@
 using GymMe.Models;
 using GymMe.Modules;
 using GymMe.Repositories;
-using System;
 using System.Collections.Generic;
 
 namespace GymMe.Handlers
@@ -21,6 +20,19 @@ namespace GymMe.Handlers
             {
                 Success = !isEmpty,
                 Message = isEmpty ? "No carts found" : "Carts found",
+                Payload = carts
+            };
+        }
+
+        public static Response<List<Cart>> GetAll(int userId)
+        {
+            List<Cart> carts = CartRepository.GetAll(userId);
+            bool isEmpty = carts.Count == 0;
+
+            return new Response<List<Cart>>()
+            {
+                Success = !isEmpty,
+                Message = isEmpty ? "No carts found" : "Carts found for the user",
                 Payload = carts
             };
         }
@@ -47,6 +59,30 @@ namespace GymMe.Handlers
                 Success = true,
                 Message = "Successfully created the cart.",
                 Payload = cart
+            };
+        }
+
+        public static Response<Cart> Delete(int id)
+        {
+            bool success = CartRepository.Delete(id);
+
+            return new Response<Cart>()
+            {
+                Success = success,
+                Message = success ? "Successfully deleted the cart." : "No cart found",
+                Payload = null
+            };
+        }
+
+        public static Response<List<Cart>> Clear(int userId)
+        {
+            bool success = CartRepository.Clear(userId);
+
+            return new Response<List<Cart>>()
+            {
+                Success = success,
+                Message = success ? "Successfully cleared the carts for the user." : "No carts found",
+                Payload = null
             };
         }
         #endregion

@@ -19,6 +19,16 @@ namespace GymMe.Repositories
             return Database.TransactionHeaders.ToList();
         }
 
+        public static List<TransactionHeader> GetAllUnhandled()
+        {
+            return Database.TransactionHeaders.Where(th => th.Status.Equals("Unhandled")).ToList();
+        }
+
+        public static List<TransactionHeader> GetAllHandled()
+        {
+            return Database.TransactionHeaders.Where(th => th.Status.Equals("Handled")).ToList();
+        }
+
         public static TransactionHeader Get(int id)
         {
             return Database.TransactionHeaders.FirstOrDefault(th => th.TransactionID == id);
@@ -30,7 +40,7 @@ namespace GymMe.Repositories
             Database.SaveChanges();
         }
 
-        public static TransactionHeader Update(int id, int userId, DateTime transactionDate, string status)
+        public static TransactionHeader Update(int id, int userId, DateTime transactionDate)
         {
             TransactionHeader transactionHeader = Get(id);
 
@@ -38,6 +48,22 @@ namespace GymMe.Repositories
             {
                 transactionHeader.UserID = userId;
                 transactionHeader.TransactionDate = transactionDate;
+                Database.SaveChanges();
+
+                return transactionHeader;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static TransactionHeader UpdateStatus(int id, string status)
+        {
+            TransactionHeader transactionHeader = Get(id);
+
+            if (transactionHeader != null)
+            {
                 transactionHeader.Status = status;
                 Database.SaveChanges();
 

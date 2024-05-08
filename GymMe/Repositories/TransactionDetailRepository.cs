@@ -18,6 +18,11 @@ namespace GymMe.Repositories
             return Database.TransactionDetails.ToList();
         }
 
+        public static List<TransactionDetail> GetAll(int id)
+        {
+            return Database.TransactionDetails.Where(td => td.TransactionID == id).ToList();
+        }
+
         public static TransactionDetail Get(int id)
         {
             return Database.TransactionDetails.FirstOrDefault(td => td.TransactionID == id);

@@ -92,6 +92,10 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\SupplementController.cs" />
+    <Compile Include="Controllers\TransactionDetailController.cs" />
+    <Compile Include="Controllers\TransactionHeaderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Enumerations\OrderStatusType.cs" />
     <Compile Include="Enumerations\UserGenderType.cs" />

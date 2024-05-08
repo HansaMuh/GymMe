@@ -18,6 +18,11 @@ namespace GymMe.Repositories
             return Database.Carts.ToList();
         }
 
+        public static List<Cart> GetAll(int userId)
+        {
+            return Database.Carts.Where(c => c.UserID == userId).ToList();
+        }
+
         public static Cart Get(int id)
         {
             return Database.Carts.FirstOrDefault(c => c.CartID == id);
@@ -27,6 +32,36 @@ namespace GymMe.Repositories
         {
             Database.Carts.Add(cart);
             Database.SaveChanges();
+        }
+
+        public static bool Delete(int id)
+        {
+            Cart cart = Get(id);
+
+            if (cart != null)
+            {
+                Database.Carts.Remove(cart);
+                Database.SaveChanges();
+
+                return true;
+            }
+
+            return false;
+        }
+
+        public static bool Clear(int userId)
+        {
+            List<Cart> carts = GetAll(userId);
+
+            if (carts.Count > 0)
+            {
+                Database.Carts.RemoveRange(carts);
+                Database.SaveChanges();
+
+                return true;
+            }
+
+            return false;
         }
 
     }

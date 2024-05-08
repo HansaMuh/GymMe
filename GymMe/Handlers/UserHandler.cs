@@ -76,15 +76,41 @@ namespace GymMe.Handlers
             };
         }
 
-        public static Response<User> Update(int id, string name, string pass, string email, DateTime dob, string gender, string role)
+        public static Response<User> Insert(string name, string pass, string email, DateTime dob, string gender, string role)
         {
-            User user = UserRepository.Update(id, name, pass, email, dob, gender, role);
+            User user = UserFactory.Create(GenerateID(), name, pass, email, dob, gender, role);
+            UserRepository.Insert(user);
+
+            return new Response<User>()
+            {
+                Success = true,
+                Message = "Successfully inserted the user.",
+                Payload = user
+            };
+        }
+
+        public static Response<User> Update(int id, string name, string email, DateTime dob, string gender)
+        {
+            User user = UserRepository.Update(id, name, email, dob, gender);
             bool isNull = user is null;
 
             return new Response<User>()
             {
                 Success = !isNull,
                 Message = isNull ? "User not found" : "Successfully updated the user.",
+                Payload = !isNull ? user : null
+            };
+        }
+
+        public static Response<User> UpdatePassword(int id, string pass)
+        {
+            User user = UserRepository.UpdatePassword(id, pass);
+            bool isNull = user is null;
+
+            return new Response<User>()
+            {
+                Success = !isNull,
+                Message = isNull ? "User not found" : "Successfully updated the user's password.",
                 Payload = !isNull ? user : null
             };
         }

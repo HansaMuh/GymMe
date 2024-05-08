@@ -24,6 +24,19 @@ namespace GymMe.Handlers
             };
         }
 
+        public static Response<List<TransactionDetail>> GetAll(int id)
+        {
+            List<TransactionDetail> transactionDetails = TransactionDetailRepository.GetAll(id);
+            bool isEmpty = transactionDetails.Count == 0;
+
+            return new Response<List<TransactionDetail>>()
+            {
+                Success = !isEmpty,
+                Message = isEmpty ? "No transaction details found" : "Transaction details found for the selected header",
+                Payload = transactionDetails
+            };
+        }
+
         public static Response<TransactionDetail> Get(int id)
         {
             TransactionDetail transactionDetail = TransactionDetailRepository.Get(id);

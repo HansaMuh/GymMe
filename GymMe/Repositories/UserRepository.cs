@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace GymMe.Repositories
 {
@@ -40,18 +41,33 @@ namespace GymMe.Repositories
             Database.SaveChanges();
         }
 
-        public static User Update(int id, string name, string pass, string email, DateTime dob, string gender, string role)
+        public static User Update(int id, string name, string email, DateTime dob, string gender)
         {
             User user = Get(id);
 
             if (user != null)
             {
                 user.UserName = name;
-                user.UserPass = pass;
                 user.UserEmail = email;
                 user.UserDOB = dob;
                 user.UserGender = gender;
-                user.UserRole = role;
+                Database.SaveChanges();
+
+                return user;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        public static User UpdatePassword(int id, string pass)
+        {
+            User user = Get(id);
+
+            if (user != null)
+            {
+                user.UserPass = pass;
                 Database.SaveChanges();
 
                 return user;

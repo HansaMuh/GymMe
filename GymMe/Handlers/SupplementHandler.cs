@@ -50,6 +50,19 @@ namespace GymMe.Handlers
             };
         }
 
+        public static Response<Supplement> Insert(string name, DateTime expiryDate, int price, int typeId)
+        {
+            Supplement supplement = SupplementFactory.Create(GenerateID(), name, expiryDate, price, typeId);
+            SupplementRepository.Insert(supplement);
+
+            return new Response<Supplement>()
+            {
+                Success = true,
+                Message = "Successfully inserted the supplement.",
+                Payload = supplement
+            };
+        }
+
         public static Response<Supplement> Update(int id, string name, DateTime expiryDate, int price, int typeId)
         {
             Supplement supplement = SupplementRepository.Update(id, name, expiryDate, price, typeId);
@@ -72,6 +85,33 @@ namespace GymMe.Handlers
                 Success = success,
                 Message = success ? "Successfully deleted the supplement." : "Supplement not found",
                 Payload = null
+            };
+        }
+
+        public static Response<Supplement> AddToCart(int userId, int supplementId, int quantity)
+        {
+            User user = UserRepository.Get(userId);
+            Supplement supplement = SupplementRepository.Get(supplementId);
+            bool isNull = user is null || supplement is null;
+
+            if (isNull)
+            {
+                return new Response<Supplement>()
+                {
+                    Success = false,
+                    Message = "User or supplement not found",
+                    Payload = null
+                };
+            }
+
+            Cart cart = CartFactory.Create(CartRepository.GetAll().Count + 1, userId, supplementId, quantity);
+            CartRepository.Insert(cart);
+
+            return new Response<Supplement>()
+            {
+                Success = true,
+                Message = "Successfully added the supplement to the user's cart.",
+                Payload = supplement
             };
         }
         #endregion
