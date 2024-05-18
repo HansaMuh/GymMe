@@ -25,9 +25,9 @@ namespace GymMe.Repositories
             return Database.Users.FirstOrDefault(u => u.UserID == id);
         }
 
-        public static User Get(string email)
+        public static User Get(string name)
         {
-            return Database.Users.FirstOrDefault(u => u.UserEmail.Equals(email, StringComparison.OrdinalIgnoreCase));
+            return Database.Users.FirstOrDefault(u => u.UserName.Equals(name, StringComparison.OrdinalIgnoreCase));
         }
 
         public static User Get(string name, string pass)

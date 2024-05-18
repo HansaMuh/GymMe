@@ -39,7 +39,7 @@ namespace GymMe.Handlers
 
         public static Response<SupplementType> Create(string name)
         {
-            SupplementType supplementType = SupplementTypeFactory.Create(GenerateID(), name);
+            SupplementType supplementType = SupplementTypeFactory.Create(name);
 
             return new Response<SupplementType>()
             {
@@ -47,13 +47,6 @@ namespace GymMe.Handlers
                 Message = "Successfully created the supplement type.",
                 Payload = supplementType
             };
-        }
-        #endregion
-
-        #region Methods: Utility
-        private static int GenerateID()
-        {
-            return SupplementTypeRepository.GetAll().Count + 1;
         }
         #endregion
 

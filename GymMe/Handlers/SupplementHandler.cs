@@ -40,7 +40,7 @@ namespace GymMe.Handlers
 
         public static Response<Supplement> Create(string name, DateTime expiryDate, int price, int typeId)
         {
-            Supplement supplement = SupplementFactory.Create(GenerateID(), name, expiryDate, price, typeId);
+            Supplement supplement = SupplementFactory.Create(name, expiryDate, price, typeId);
 
             return new Response<Supplement>()
             {
@@ -52,7 +52,7 @@ namespace GymMe.Handlers
 
         public static Response<Supplement> Insert(string name, DateTime expiryDate, int price, int typeId)
         {
-            Supplement supplement = SupplementFactory.Create(GenerateID(), name, expiryDate, price, typeId);
+            Supplement supplement = SupplementFactory.Create(name, expiryDate, price, typeId);
             SupplementRepository.Insert(supplement);
 
             return new Response<Supplement>()
@@ -104,7 +104,7 @@ namespace GymMe.Handlers
                 };
             }
 
-            Cart cart = CartFactory.Create(CartRepository.GetAll().Count + 1, userId, supplementId, quantity);
+            Cart cart = CartFactory.Create(userId, supplementId, quantity);
             CartRepository.Insert(cart);
 
             return new Response<Supplement>()
@@ -113,13 +113,6 @@ namespace GymMe.Handlers
                 Message = "Successfully added the supplement to the user's cart.",
                 Payload = supplement
             };
-        }
-        #endregion
-
-        #region Methods: Utility
-        private static int GenerateID()
-        {
-            return SupplementRepository.GetAll().Count + 1;
         }
         #endregion
 

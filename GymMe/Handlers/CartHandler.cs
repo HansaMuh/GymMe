@@ -52,7 +52,7 @@ namespace GymMe.Handlers
 
         public static Response<Cart> Create(int userId, int supplementId, int quantity)
         {
-            Cart cart = CartFactory.Create(GenerateID(), userId, supplementId, quantity);
+            Cart cart = CartFactory.Create(userId, supplementId, quantity);
 
             return new Response<Cart>()
             {
@@ -84,13 +84,6 @@ namespace GymMe.Handlers
                 Message = success ? "Successfully cleared the carts for the user." : "No carts found",
                 Payload = null
             };
-        }
-        #endregion
-
-        #region Methods: Utility
-        private static int GenerateID()
-        {
-            return CartRepository.GetAll().Count + 1;
         }
         #endregion
 

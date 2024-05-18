@@ -33,20 +33,20 @@ namespace GymMe.Handlers
             return new Response<User>()
             {
                 Success = !isNull,
-                Message = isNull ? "User not found" : "User found",
+                Message = isNull ? "Invalid ID" : "User found",
                 Payload = user
             };
         }
 
-        public static Response<User> Get(string email)
+        public static Response<User> Get(string name)
         {
-            User user = UserRepository.Get(email);
+            User user = UserRepository.Get(name);
             bool isNull = user is null;
 
             return new Response<User>()
             {
                 Success = !isNull,
-                Message = isNull ? "User not found" : "User found",
+                Message = isNull ? "Invalid name" : "User found",
                 Payload = user
             };
         }
@@ -59,14 +59,14 @@ namespace GymMe.Handlers
             return new Response<User>()
             {
                 Success = !isNull,
-                Message = isNull ? "User not found" : "User found",
+                Message = isNull ? "Invalid name or password" : "User found",
                 Payload = user
             };
         }
 
         public static Response<User> Create(string name, string pass, string email, DateTime dob, string gender, string role)
         {
-            User user = UserFactory.Create(GenerateID(), name, pass, email, dob, gender, role);
+            User user = UserFactory.Create(name, pass, email, dob, gender, role);
 
             return new Response<User>()
             {
@@ -78,7 +78,17 @@ namespace GymMe.Handlers
 
         public static Response<User> Insert(string name, string pass, string email, DateTime dob, string gender, string role)
         {
-            User user = UserFactory.Create(GenerateID(), name, pass, email, dob, gender, role);
+            if (UserRepository.Get(name) != null)
+            {
+                return new Response<User>()
+                {
+                    Success = false,
+                    Message = "User already exists",
+                    Payload = null
+                };
+            }
+
+            User user = UserFactory.Create(name, pass, email, dob, gender, role);
             UserRepository.Insert(user);
 
             return new Response<User>()
@@ -113,13 +123,6 @@ namespace GymMe.Handlers
                 Message = isNull ? "User not found" : "Successfully updated the user's password.",
                 Payload = !isNull ? user : null
             };
-        }
-        #endregion
-
-        #region Methods: Utility
-        private static int GenerateID()
-        {
-            return UserRepository.GetAll().Count + 1;
         }
         #endregion
 

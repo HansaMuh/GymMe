@@ -2,7 +2,6 @@
 using GymMe.Handlers;
 using GymMe.Models;
 using GymMe.Modules;
-using GymMe.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;

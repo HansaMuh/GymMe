@@ -67,7 +67,7 @@ namespace GymMe.Handlers
 
         public static Response<TransactionHeader> Create(int userId, DateTime transactionDate, string status)
         {
-            TransactionHeader transactionHeader = TransactionHeaderFactory.Create(GenerateID(), userId, transactionDate, status);
+            TransactionHeader transactionHeader = TransactionHeaderFactory.Create(userId, transactionDate, status);
 
             return new Response<TransactionHeader>()
             {
@@ -119,7 +119,7 @@ namespace GymMe.Handlers
                 };
             }
 
-            TransactionHeader transactionHeader = TransactionHeaderFactory.Create(GenerateID(), userId, DateTime.Now, OrderStatusType.Unhandled.ToString());
+            TransactionHeader transactionHeader = TransactionHeaderFactory.Create(userId, DateTime.Now, OrderStatusType.Unhandled.ToString());
             TransactionHeaderRepository.Insert(transactionHeader);
 
             foreach (Cart cart in carts)
@@ -136,13 +136,6 @@ namespace GymMe.Handlers
                 Message = "Successfully checked out for the transaction header.",
                 Payload = transactionHeader
             };
-        }
-        #endregion
-
-        #region Methods: Utility
-        private static int GenerateID()
-        {
-            return TransactionHeaderRepository.GetAll().Count + 1;
         }
         #endregion
 
