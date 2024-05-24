@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
+﻿using GymMe.Controllers;
+using GymMe.Models;
+using GymMe.Modules;
+using System;
 
 namespace GymMe.Views
 {
@@ -12,17 +10,30 @@ namespace GymMe.Views
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+               
         }
 
-        protected void Submit_Input_Click(object sender, EventArgs e)
+        protected void BtnSubmit_Click(object sender, EventArgs e)
         {
-            String name = InputName.Text;
-            String email = InputEmail.Text;
-            String gender = InputGender.Text;
+            string name = InputName.Text;
+            string email = InputEmail.Text;
+            string gender = InputGenderMale.Checked ? InputGenderMale.Text : InputGenderFemale.Checked ? InputGenderFemale.Text : string.Empty;
+            string password = InputPassword.Text;
+            string confirmPassword = InputConfirm.Text;
+            DateTime dob = InputCalender.SelectedDate;
+
+            Response<User> response = UserController.Register(name, email, gender, password, confirmPassword, dob);
+            if (response.Success)
+            {
+                LblErrorMsg.Visible = false;
+                Response.Redirect("LoginPage.aspx");
+            }
+            else
+            {
+                LblErrorMsg.Visible = true;
+                LblErrorMsg.Text = "Error:<br/>" + response.Message;
+            }
         }
     }
-
-    
 
 }

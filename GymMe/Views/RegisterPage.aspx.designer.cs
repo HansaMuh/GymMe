@@ -69,22 +69,22 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.Label LblGender;
 
         /// <summary>
-        /// InputGender control.
+        /// InputGenderMale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton InputGender;
+        protected global::System.Web.UI.WebControls.RadioButton InputGenderMale;
 
         /// <summary>
-        /// InputGender control.
+        /// InputGenderFemale control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton InputGender;
+        protected global::System.Web.UI.WebControls.RadioButton InputGenderFemale;
 
         /// <summary>
         /// LblPassword control.
@@ -105,22 +105,22 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.TextBox InputPassword;
 
         /// <summary>
-        /// LblRepassword control.
+        /// LblConfirmPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblRepassword;
+        protected global::System.Web.UI.WebControls.Label LblConfirmPassword;
 
         /// <summary>
-        /// InputRePass control.
+        /// InputConfirm control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox InputRePass;
+        protected global::System.Web.UI.WebControls.TextBox InputConfirm;
 
         /// <summary>
         /// LblDOB control.
@@ -132,21 +132,30 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.Label LblDOB;
 
         /// <summary>
-        /// InputCallender control.
+        /// InputCalender control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar InputCallender;
+        protected global::System.Web.UI.WebControls.Calendar InputCalender;
 
         /// <summary>
-        /// Submit_Input control.
+        /// BtnSubmit control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Submit_Input;
+        protected global::System.Web.UI.WebControls.Button BtnSubmit;
+
+        /// <summary>
+        /// LblErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErrorMsg;
     }
 }

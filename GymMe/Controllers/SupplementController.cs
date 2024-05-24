@@ -90,7 +90,7 @@ namespace GymMe.Controllers
             string errorMessage = string.Empty;
             if (quantity <= 0)
             {
-                errorMessage += "- Invalid quantity.\r\n";
+                errorMessage += "- Invalid quantity.<br/>";
             }
 
             return errorMessage;
@@ -101,19 +101,19 @@ namespace GymMe.Controllers
             string errorMessage = string.Empty;
             if (!name.Contains("Supplement") || string.IsNullOrEmpty(name))
             {
-                errorMessage += "- Name must contain \'Supplement\' and cannot be empty.\r\n";
+                errorMessage += "- Name must contain \'Supplement\' and cannot be empty.<br/>";
             }
             if (expiryDate <= DateTime.Now || expiryDate == null)
             {
-                errorMessage += "- Expiry date must be greater than today's date and cannot be empty.\r\n";
+                errorMessage += "- Expiry date must be greater than today's date and cannot be empty.<br/>";
             }
             if (price <= 0 || price < 3000)
             {
-                errorMessage += "- Price must be at least 3000 and cannot be empty.\r\n";
+                errorMessage += "- Price must be at least 3000 and cannot be empty.<br/>";
             }
             if (typeId <= 0)
             {
-                errorMessage += "- Type ID cannot be empty.\r\n";
+                errorMessage += "- Type ID cannot be empty.<br/>";
             }
 
             return errorMessage;

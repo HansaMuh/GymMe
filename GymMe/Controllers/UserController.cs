@@ -106,11 +106,11 @@ namespace GymMe.Controllers
             string errorMessage = string.Empty;
             if (string.IsNullOrEmpty(name))
             {
-                errorMessage += "- Invalid username.\r\n";
+                errorMessage += "- Invalid username.<br/>";
             }
             if (string.IsNullOrEmpty(pass))
             {
-                errorMessage += "- Invalid password.\r\n";
+                errorMessage += "- Invalid password.<br/>";
             }
 
             return errorMessage;
@@ -121,31 +121,31 @@ namespace GymMe.Controllers
             string errorMessage = string.Empty;
             if (!Regex.IsMatch(name, "^[a-zA-Z ]{5,15}$"))
             {
-                errorMessage += "- Username's length must be between 5 and 15 characters, containing only alphabets and spaces.\r\n";
+                errorMessage += "- Username's length must be between 5 and 15 characters, containing only alphabets and spaces.<br/>";
             }
             if (!email.EndsWith(".com") || string.IsNullOrEmpty(email))
             {
-                errorMessage += "- Email must end with \'.com\' and cannot be empty.\r\n";
+                errorMessage += "- Email must end with \'.com\' and cannot be empty.<br/>";
             }
             if (string.IsNullOrEmpty(gender))
             {
-                errorMessage += "- Gender must be chosen and cannot be empty.\r\n";
+                errorMessage += "- Gender must be chosen and cannot be empty.<br/>";
             }
             if (!Regex.IsMatch(pass, "^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{1,}$") || string.IsNullOrEmpty(pass))
             {
-                errorMessage += "- Password must be alphanumeric and cannot be empty.\r\n";
+                errorMessage += "- Password must be alphanumeric and cannot be empty.<br/>";
             }
             if (string.IsNullOrEmpty(confirmPass))
             {
-                errorMessage += "- Confirm password cannot be empty.\r\n";
+                errorMessage += "- Confirm password cannot be empty.<br/>";
             }
             if (!pass.Equals(confirmPass))
             {
-                errorMessage += "- Passwords do not match.\r\n";
+                errorMessage += "- Passwords do not match.<br/>";
             }
-            if (dob == null)
+            if (dob == DateTime.MinValue)
             {
-                errorMessage += "- Date of birth cannot be empty.\r\n";
+                errorMessage += "- Date of birth cannot be empty.<br/>";
             }
 
             return errorMessage;
@@ -156,19 +156,19 @@ namespace GymMe.Controllers
             string errorMessage = string.Empty;
             if (!Regex.IsMatch(name, "^[a-zA-Z ]{5,15}$"))
             {
-                errorMessage += "- Username's length must be between 5 and 15 characters, containing only alphabets and spaces.\r\n";
+                errorMessage += "- Username's length must be between 5 and 15 characters, containing only alphabets and spaces.<br/>";
             }
             if (!email.EndsWith(".com") || string.IsNullOrEmpty(email))
             {
-                errorMessage += "- Email must end with \'.com\' and cannot be empty.\r\n";
+                errorMessage += "- Email must end with \'.com\' and cannot be empty.<br/>";
             }
             if (string.IsNullOrEmpty(gender))
             {
-                errorMessage += "- Gender must be chosen and cannot be empty.\r\n";
+                errorMessage += "- Gender must be chosen and cannot be empty.<br/>";
             }
-            if (dob == null)
+            if (dob == DateTime.MinValue)
             {
-                errorMessage += "- Date of birth cannot be empty.\r\n";
+                errorMessage += "- Date of birth cannot be empty.<br/>";
             }
 
             return errorMessage;
@@ -181,11 +181,11 @@ namespace GymMe.Controllers
             string errorMessage = string.Empty;
             if (!user.UserPass.Equals(pass) || string.IsNullOrEmpty(pass))
             {
-                errorMessage += "- Old password must be the same as the current one and cannot be empty.\r\n";
+                errorMessage += "- Old password must be the same as the current one and cannot be empty.<br/>";
             }
             if (!Regex.IsMatch(newPass, "^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]{1,}$") || string.IsNullOrEmpty(newPass))
             {
-                errorMessage += "- New password must be alphanumeric and cannot be empty.\r\n";
+                errorMessage += "- New password must be alphanumeric and cannot be empty.<br/>";
             }
 
             return errorMessage;

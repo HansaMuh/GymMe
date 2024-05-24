@@ -9,38 +9,42 @@
 <body>
     <form id="form1" runat="server">
         <div class="UserName">
-            <asp:Label ID="LblName" runat="server" Text="Name"></asp:Label>
-            <asp:TextBox ID="InputName" runat="server"></asp:TextBox>
+            <asp:Label ID="LblName" runat="server" Text="Name" />
+            <asp:TextBox ID="InputName" runat="server" />
         </div>
 
         <div class="UserEmail">
-            <asp:Label ID="LblEmail" runat="server" Text="Email"></asp:Label>
-            <asp:TextBox ID="InputEmail" runat="server"></asp:TextBox>
+            <asp:Label ID="LblEmail" runat="server" Text="Email" />
+            <asp:TextBox ID="InputEmail" runat="server" />
         </div>
 
-         <div class="GenderUser">
-             <asp:Label ID="LblGender" runat="server" Text="Gender"></asp:Label>
-             <asp:RadioButton ID="InputGender" runat="server" text="Male" GroupName="Gender"/>
-             <asp:RadioButton ID="InputGender" runat="server" text="Female" GroupName="Gender"/>
+        <div class="GenderUser">
+            <asp:Label ID="LblGender" runat="server" Text="Gender" />
+            <asp:RadioButton ID="InputGenderMale" runat="server" text="Male" GroupName="Gender" />
+            <asp:RadioButton ID="InputGenderFemale" runat="server" text="Female" GroupName="Gender" />
         </div>
 
-         <div class="PasswordUser">
-             <asp:Label ID="LblPassword" runat="server" Text="Password"></asp:Label>
-             <asp:TextBox ID="InputPassword" runat="server"></asp:TextBox>
+        <div class="PasswordUser">
+            <asp:Label ID="LblPassword" runat="server" Text="Password" />
+            <asp:TextBox ID="InputPassword" runat="server" TextMode="Password" />
         </div>
 
-         <div class="RepasswordUser">
-             <asp:Label ID="LblRepassword" runat="server" Text="Re Tyoe Password"></asp:Label>
-             <asp:TextBox ID="InputRePass" runat="server"></asp:TextBox>
+        <div class="RepasswordUser">
+            <asp:Label ID="LblConfirmPassword" runat="server" Text="Confirm Password" />
+            <asp:TextBox ID="InputConfirm" runat="server" TextMode="Password" />
         </div>
 
         <div class="DOBUser">
-            <asp:Label ID="LblDOB" runat="server" Text="Date Of Birth"></asp:Label>
-            <asp:Calendar ID="InputCallender" runat="server"></asp:Calendar>
+            <asp:Label ID="LblDOB" runat="server" Text="Date of Birth" />
+            <asp:Calendar ID="InputCalender" runat="server" />
         </div>
 
         <div class="SubmitRegis">
-            <asp:Button ID="Submit_Input" runat="server" Text="Submit" OnClick="Submit_Input_Click" />
+            <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" />
+        </div>
+
+        <div class="ErrorMessage">
+            <asp:Label ID="LblErrorMsg" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
         </div>
     </form>
 </body>
