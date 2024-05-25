@@ -26,6 +26,19 @@ namespace GymMe.Handlers
             };
         }
 
+        public static Response<List<TransactionHeader>> GetAll(int userId)
+        {
+            List<TransactionHeader> transactionHeaders = TransactionHeaderRepository.GetAll(userId);
+            bool isEmpty = transactionHeaders.Count == 0;
+
+            return new Response<List<TransactionHeader>>()
+            {
+                Success = !isEmpty,
+                Message = isEmpty ? "No transaction headers found" : "Transaction headers found for the user",
+                Payload = transactionHeaders
+            };
+        }
+
         public static Response<List<TransactionHeader>> GetAllUnhandled()
         {
             List<TransactionHeader> transactionHeaders = TransactionHeaderRepository.GetAllUnhandled();

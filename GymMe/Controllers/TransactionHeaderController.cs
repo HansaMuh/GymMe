@@ -15,6 +15,11 @@ namespace GymMe.Controllers
             return TransactionHeaderHandler.GetAll();
         }
 
+        public static Response<List<TransactionHeader>> GetAll(int userId)
+        {
+            return TransactionHeaderHandler.GetAll(userId);
+        }
+
         public static Response<List<TransactionHeader>> GetAllUnhandled()
         {
             return TransactionHeaderHandler.GetAllUnhandled();

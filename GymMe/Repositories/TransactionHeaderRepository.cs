@@ -20,6 +20,11 @@ namespace GymMe.Repositories
             return Database.TransactionHeaders.ToList();
         }
 
+        public static List<TransactionHeader> GetAll(int userId)
+        {
+            return Database.TransactionHeaders.Where(th => th.UserID == userId).ToList();
+        }
+
         public static List<TransactionHeader> GetAllUnhandled()
         {
             return Database.TransactionHeaders.Where(th => th.Status.Equals("Unhandled")).ToList();
