@@ -1,6 +1,7 @@
 ﻿using GymMe.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace GymMe.Repositories
@@ -45,6 +46,8 @@ namespace GymMe.Repositories
                 supplement.SupplementExpiryDate = expiryDate;
                 supplement.SupplementPrice = price;
                 supplement.SupplementTypeID = typeId;
+
+                Database.Entry(supplement).State = EntityState.Modified;
                 Database.SaveChanges();
 
                 return supplement;

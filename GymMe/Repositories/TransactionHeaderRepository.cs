@@ -1,6 +1,7 @@
 ﻿using GymMe.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 
 namespace GymMe.Repositories
@@ -48,6 +49,8 @@ namespace GymMe.Repositories
             {
                 transactionHeader.UserID = userId;
                 transactionHeader.TransactionDate = transactionDate;
+
+                Database.Entry(transactionHeader).State = EntityState.Modified;
                 Database.SaveChanges();
 
                 return transactionHeader;

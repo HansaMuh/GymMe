@@ -15,20 +15,29 @@ namespace GymMe.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            User user =  SessionManager.GetCurrentUser();
+            RefreshData();
+        }
 
-            InputName.Text = user.UserName;
-            InputEmail.Text = user.UserEmail;
-            InputGenderMale.Checked = user.UserGender == "Male";
-            InputGenderFemale.Checked = user.UserGender == "Female";
-            InputCalender.SelectedDate = user.UserDOB;
-            InputCalender.VisibleDate = user.UserDOB;
+        protected void RefreshData()
+        {
+            if (!IsPostBack)
+            {
+                User user = SessionManager.GetCurrentUser();
+
+                InputName.Text = user.UserName;
+                InputEmail.Text = user.UserEmail;
+                InputGenderMale.Checked = user.UserGender == "Male";
+                InputGenderFemale.Checked = user.UserGender == "Female";
+                InputCalender.SelectedDate = user.UserDOB;
+                InputCalender.VisibleDate = user.UserDOB;
+            }
         }
 
         protected void ButtonUpdateData_Click(object sender, EventArgs e)
         {
             User user = SessionManager.GetCurrentUser();
-            if(user != null)
+            
+            if (user != null)
             {
                 String name = InputName.Text;
                 String email = InputEmail.Text;
@@ -36,17 +45,9 @@ namespace GymMe.Views
                 DateTime dob = InputCalender.SelectedDate;
 
                 Response<User> response = UserController.UpdateProfile(user.UserID, name, email, gender, dob);
-                if (response.Success)
-                {
-                    Response.Write("<script>alert(Profile has been Updated);</script>");
-                }
-                else
-                {
-                    Response.Write("<script>alert(Profile can not been updated);</script>");
-                }
 
+                RefreshData();
             }
-
         }
 
         protected void ButtonUpdatePassword_Click(object sender, EventArgs e)

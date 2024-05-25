@@ -1,8 +1,8 @@
 ﻿using GymMe.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace GymMe.Repositories
 {
@@ -51,8 +51,10 @@ namespace GymMe.Repositories
                 user.UserEmail = email;
                 user.UserDOB = dob;
                 user.UserGender = gender;
-                Database.SaveChanges();
 
+                Database.Entry(user).State = EntityState.Modified;
+                Database.SaveChanges();
+                
                 return user;
             }
             else
