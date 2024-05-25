@@ -53,6 +53,7 @@ namespace GymMe.Views
         protected void ButtonUpdatePassword_Click(object sender, EventArgs e)
         {
             User user = SessionManager.GetCurrentUser();
+
             if (user != null)
             {
                 String New = InputNew.Text;

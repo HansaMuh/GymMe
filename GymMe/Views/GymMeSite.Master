@@ -15,8 +15,8 @@
             </div>
             
             <div class="userCompliment">
-                <a href="HomePageCustomer.aspx">HomePageCustomer.aspx</a>
-                tes
+                <a href="HomePageCustomer.aspx">HomePage</a>
+                <a href="CustomerHistoryPage.aspx">History</a>
                 tes
             </div>
             

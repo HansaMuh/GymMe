@@ -91,6 +91,7 @@
     </Content>
     <Content Include="Views\AdminHomePage.aspx" />
     <Content Include="Views\AdminProfilePage.aspx" />
+    <Content Include="Views\CustomerHistoryPage.aspx" />
     <Content Include="Views\CustomerProfilePage.aspx" />
     <Content Include="Views\HomePageCustomer.aspx" />
     <Content Include="Views\LoginPages.aspx" />
@@ -174,6 +175,13 @@
     </Compile>
     <Compile Include="Views\AdminProfilePage.aspx.designer.cs">
       <DependentUpon>AdminProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerHistoryPage.aspx.cs">
+      <DependentUpon>CustomerHistoryPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerHistoryPage.aspx.designer.cs">
+      <DependentUpon>CustomerHistoryPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerProfilePage.aspx.cs">
       <DependentUpon>CustomerProfilePage.aspx</DependentUpon>

@@ -30,12 +30,10 @@ namespace GymMe.Views
         {
             String name = inputusername.Text;
             String pass = inputpassword.Text;
-
             Response<User> response = UserController.Authenticate(name, pass);
             if (response.Success)
             {
                 SessionManager.SaveCurrentUser(response.Payload);
-
                 LblErrorMsg.Visible = false;
                 if (CheckBox.Checked)
                 {
@@ -49,7 +47,15 @@ namespace GymMe.Views
                     Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
                 }
-                Response.Redirect("HomePageCustomer.aspx");
+                if (response.Payload.UserRole.Equals("Customer"))
+                {
+                    Response.Redirect("HomePageCustomer.aspx");
+                }
+
+                if (response.Payload.UserRole.Equals("Admin"))
+                {
+                    Response.Redirect("AdminHomePage.aspx");
+                }
             }
             else
             {
