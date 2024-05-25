@@ -89,7 +89,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="Views\LoginPage.aspx" />
+    <Content Include="Views\AdminHomePage.aspx" />
+    <Content Include="Views\AdminProfilePage.aspx" />
+    <Content Include="Views\CustomerProfilePage.aspx" />
+    <Content Include="Views\HomePageCustomer.aspx" />
+    <Content Include="Views\LoginPages.aspx" />
     <Content Include="Views\RegisterPage.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -156,12 +160,55 @@
     <Compile Include="Repositories\TransactionDetailRepository.cs" />
     <Compile Include="Repositories\SupplementRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
-    <Compile Include="Views\LoginPage.aspx.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="Utility\SessionManager.cs" />
+    <Compile Include="Views\AdminHomePage.aspx.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Views\LoginPage.aspx.designer.cs">
-      <DependentUpon>LoginPage.aspx</DependentUpon>
+    <Compile Include="Views\AdminHomePage.aspx.designer.cs">
+      <DependentUpon>AdminHomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminProfilePage.aspx.cs">
+      <DependentUpon>AdminProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminProfilePage.aspx.designer.cs">
+      <DependentUpon>AdminProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CustomerProfilePage.aspx.cs">
+      <DependentUpon>CustomerProfilePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\CustomerProfilePage.aspx.designer.cs">
+      <DependentUpon>CustomerProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\GymMeSite.Master.cs">
+      <DependentUpon>GymMeSite.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\GymMeSite.Master.designer.cs">
+      <DependentUpon>GymMeSite.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomeAdminPage.Master.cs">
+      <DependentUpon>HomeAdminPage.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HomeAdminPage.Master.designer.cs">
+      <DependentUpon>HomeAdminPage.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Views\HomePageCustomer.aspx.cs">
+      <DependentUpon>HomePageCustomer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\HomePageCustomer.aspx.designer.cs">
+      <DependentUpon>HomePageCustomer.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginPages.aspx.cs">
+      <DependentUpon>LoginPages.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\LoginPages.aspx.designer.cs">
+      <DependentUpon>LoginPages.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\RegisterPage.aspx.cs">
       <DependentUpon>RegisterPage.aspx</DependentUpon>
@@ -180,6 +227,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
     <None Include="packages.config" />
+    <Content Include="Views\GymMeSite.Master" />
+    <Content Include="Views\HomeAdminPage.Master" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

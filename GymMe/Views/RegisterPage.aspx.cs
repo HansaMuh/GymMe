@@ -26,7 +26,7 @@ namespace GymMe.Views
             if (response.Success)
             {
                 LblErrorMsg.Visible = false;
-                Response.Redirect("LoginPage.aspx");
+                Response.Redirect("LoginPages.aspx");
             }
             else
             {

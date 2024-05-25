@@ -8,6 +8,10 @@
 </head>
 <body>
     <form id="form1" runat="server">
+        <h1>
+            Register Pages
+        </h1>
+
         <div class="UserName">
             <asp:Label ID="LblName" runat="server" Text="Name" />
             <asp:TextBox ID="InputName" runat="server" />

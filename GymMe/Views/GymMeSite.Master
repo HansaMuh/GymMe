@@ -1,0 +1,33 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="GymMeSite.master.cs" Inherits="GymMe.Views.GymMeSite" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Navbar</title>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav class="customerNavbar">
+            <div class="profile">
+                <a href="CustomerProfilePage.aspx">Profile</a>
+            </div>
+            
+            <div class="userCompliment">
+                <a href="HomePageCustomer.aspx">HomePageCustomer.aspx</a>
+                tes
+                tes
+            </div>
+            
+            <div class="logout">
+                <asp:Button ID="Button1" runat="server" Text="log-out" OnClick="Button1_Click"/>
+            </div>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

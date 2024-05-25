@@ -1,0 +1,31 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HomeAdminPage.master.cs" Inherits="GymMe.Views.HomeAdminPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Home Admin</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <nav>
+            <div>
+                profile
+            </div>
+            <div>
+                home
+                manage Supplement
+                order Queque
+                TransactionReport
+            </div>
+            <div>
+                <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" />  
+            </div>
+        </nav>
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
