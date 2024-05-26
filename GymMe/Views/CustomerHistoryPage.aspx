@@ -8,7 +8,7 @@
             <h1>
                 History Page
             </h1>
-            <asp:GridView ID="HistoryCustomerTable" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged" >
+            <asp:GridView ID="HistoryCustomerTable" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
                 <Columns>
                     <asp:BoundField DataField="TransactionID" HeaderText="TransactionId" SortExpression="TransactionID" />
                     <asp:BoundField DataField="UserID" HeaderText="UserId" SortExpression="UserID" />

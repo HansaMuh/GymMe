@@ -10,13 +10,13 @@
     <form id="form1" runat="server">
         <nav>
             <div>
-                profile
+                <a href="AdminProfilePage.aspx">Profile</a>
             </div>
             <div>
-                home
+                <a href="AdminHomePage.aspx">Home</a>
                 manage Supplement
                 order Queque
-                TransactionReport
+                <a href="AdminHistoryView.aspx">TransactionReport</a>
             </div>
             <div>
                 <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" />  

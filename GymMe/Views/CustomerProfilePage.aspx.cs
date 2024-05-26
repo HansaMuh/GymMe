@@ -45,7 +45,15 @@ namespace GymMe.Views
                 DateTime dob = InputCalender.SelectedDate;
 
                 Response<User> response = UserController.UpdateProfile(user.UserID, name, email, gender, dob);
-
+                if (response.Success)
+                {
+                    LblErrorMsgUpdate.Visible = false;
+                }
+                else
+                {
+                    LblErrorMsgUpdate.Visible = true;
+                    LblErrorMsgUpdate.Text = "Error:<br/>" + response.Message;
+                }
                 RefreshData();
             }
         }
@@ -62,11 +70,12 @@ namespace GymMe.Views
                 Response<User> response = UserController.UpdatePassword (user.UserID, New, Old);
                 if (response.Success)
                 {
-                    Response.Write("<script>alert(Profile has been Updated);</script>");
+                    LblErrorMsgUpdatePass.Visible = false;
                 }
                 else
                 {
-                    Response.Write("<script>alert(Profile can not been updated);</script>");
+                    LblErrorMsgUpdatePass.Visible = true;
+                    LblErrorMsgUpdatePass.Text = "Error:<br/>" + response.Message;
                 }
 
             }

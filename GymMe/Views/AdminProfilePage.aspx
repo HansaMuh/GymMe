@@ -31,6 +31,9 @@
                 </div>
                 <asp:Button ID="ButtonUpdateData" runat="server" Text="Update Information" OnClick="ButtonUpdateData_Click" />
             </section>
+            <div class="ErrorMessageUpdate">
+                <asp:Label ID="LblErrorMsgUpdate" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
+            </div>
             <h1>
                 Admin Password
             </h1>
@@ -46,6 +49,9 @@
                 </div>
                 <asp:Button ID="ButtonUpdatePassword" runat="server" Text="Update Password" OnClick="ButtonUpdatePassword_Click" />
             </section>
+            <div class="ErrorMessageUpdatePass">
+                <asp:Label ID="LblErrorMsgUpdatePass" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
+            </div>
         </body>
     </html>
 </asp:Content>

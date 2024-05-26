@@ -96,13 +96,22 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.Calendar InputCalender;
 
         /// <summary>
-        /// ButtonUpdateData control.
+        /// ButtonUpdateDataInfo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button ButtonUpdateData;
+        protected global::System.Web.UI.WebControls.Button ButtonUpdateDataInfo;
+
+        /// <summary>
+        /// LblErrorMsgUpdate control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErrorMsgUpdate;
 
         /// <summary>
         /// LblOldPassword control.
@@ -148,5 +157,14 @@ namespace GymMe.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ButtonUpdatePassword;
+
+        /// <summary>
+        /// LblErrorMsgUpdatePass control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErrorMsgUpdatePass;
     }
 }
