@@ -21,7 +21,17 @@ namespace GymMe.Views
             HistoryCustomerTable.DataBind();
         }
 
-        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        protected void HistoryTableRow(object sender, GridViewRowEventArgs e)
+        {
+            if (e.Row.RowType == DataControlRowType.DataRow)
+            {
+                Button detail = (Button)e.Row.FindControl("Detail");
+                TransactionHeader transaction = (TransactionHeader)e.Row.DataItem;
+                detail.PostBackUrl = $"TransactionDetailCustomer.aspx?TransactionID={transaction.TransactionID}";
+            }
+        }
+
+        protected void HistoryCustomerTable_SelectedIndexChanged1(object sender, EventArgs e)
         {
             Response.Redirect("TransactionDetailCustomer.aspx");
         }

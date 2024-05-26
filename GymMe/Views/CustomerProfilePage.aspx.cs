@@ -64,10 +64,11 @@ namespace GymMe.Views
 
             if (user != null)
             {
-                String New = InputNew.Text;
-                String Old = InputOld.Text;
+                string oldPass = InputOld.Text;
+                string newPass = InputNew.Text;
 
-                Response<User> response = UserController.UpdatePassword (user.UserID, New, Old);
+                Response<User> response = UserController.UpdatePassword(user.UserID, oldPass, newPass);
+
                 if (response.Success)
                 {
                     LblErrorMsgUpdatePass.Visible = false;
@@ -77,7 +78,6 @@ namespace GymMe.Views
                     LblErrorMsgUpdatePass.Visible = true;
                     LblErrorMsgUpdatePass.Text = "Error:<br/>" + response.Message;
                 }
-
             }
         }
     }

@@ -36,7 +36,6 @@ namespace GymMe.Views
         protected void ButtonUpdateData_Click(object sender, EventArgs e)
         {
             User user = SessionManager.GetCurrentUser();
-
             if (user != null)
             {
                 String name = InputName.Text;
@@ -64,10 +63,11 @@ namespace GymMe.Views
 
             if (user != null)
             {
-                String New = InputNew.Text;
-                String Old = InputOld.Text;
+                string oldPass = InputOld.Text;
+                string newPass = InputNew.Text;
 
-                Response<User> response = UserController.UpdatePassword(user.UserID, New, Old);
+                Response<User> response = UserController.UpdatePassword(user.UserID, oldPass, newPass);
+
                 if (response.Success)
                 {
                     LblErrorMsgUpdatePass.Visible = false;
@@ -77,7 +77,6 @@ namespace GymMe.Views
                     LblErrorMsgUpdatePass.Visible = true;
                     LblErrorMsgUpdatePass.Text = "Error:<br/>" + response.Message;
                 }
-
             }
         }
     }

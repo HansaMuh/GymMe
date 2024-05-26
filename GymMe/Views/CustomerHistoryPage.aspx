@@ -8,13 +8,17 @@
             <h1>
                 History Page
             </h1>
-            <asp:GridView ID="HistoryCustomerTable" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+            <asp:GridView ID="HistoryCustomerTable" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="HistoryCustomerTable_SelectedIndexChanged1" OnRowDataBound="HistoryTableRow">
                 <Columns>
                     <asp:BoundField DataField="TransactionID" HeaderText="TransactionId" SortExpression="TransactionID" />
                     <asp:BoundField DataField="UserID" HeaderText="UserId" SortExpression="UserID" />
                     <asp:BoundField DataField="TransactionDate" HeaderText="TransactionDate" SortExpression="TransactionDate" />
                     <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-                    <asp:ButtonField ButtonType="Button" CommandName="Select" HeaderText="Action" ShowHeader="True" Text="ViewDetails" />
+                    <asp:TemplateField HeaderText="Action" ShowHeader="True">
+                        <ItemTemplate>
+                            <asp:Button ID="Detail" runat="server" Text="View Details" CommandName="Select" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
                 </Columns>
             </asp:GridView>
         </body>
