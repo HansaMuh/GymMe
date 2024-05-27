@@ -142,12 +142,7 @@ warning 6002: The table/view 'C:\CODING\ASP.NET\GYMME\GYMME\APP_DATA\DATABASE.MD
           <EntitySet Name="SupplementTypes" EntityType="Self.SupplementTypes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TransactionHeaders" EntityType="Self.TransactionHeaders" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetails" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [TransactionDetails].[TransactionID] AS [TransactionID], 
-    [TransactionDetails].[SupplementID] AS [SupplementID], 
-    [TransactionDetails].[Quantity] AS [Quantity]
-    FROM [dbo].[TransactionDetails] AS [TransactionDetails]</DefiningQuery>
+          <EntitySet Name="TransactionDetails" EntityType="Self.TransactionDetails" store:Type="Tables" Schema="dbo">
           </EntitySet>
           <AssociationSet Name="FK_Carts_ToSupplements" Association="Self.FK_Carts_ToSupplements">
             <End Role="Supplements" EntitySet="Supplements" />
