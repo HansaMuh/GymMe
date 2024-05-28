@@ -24,6 +24,11 @@ namespace GymMe.Controllers
         {
             return CartHandler.Clear(userId);
         }
+
+        public static Response<List<Cart>> ClearBySupplement(int supplementId)
+        {
+            return CartHandler.ClearBySupplement(supplementId);
+        }
         #endregion
 
     }

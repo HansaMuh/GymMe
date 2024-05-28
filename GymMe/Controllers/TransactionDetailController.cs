@@ -20,9 +20,14 @@ namespace GymMe.Controllers
             return TransactionDetailHandler.GetAll(id);
         }
 
-        public static Response<TransactionHeader> Get(int id)
+        public static Response<TransactionDetail> Get(int id)
         {
-            return TransactionHeaderHandler.Get(id);
+            return TransactionDetailHandler.Get(id);
+        }
+
+        public static Response<List<TransactionDetail>> ClearBySupplement(int supplementId)
+        {
+            return TransactionDetailHandler.ClearBySupplement(supplementId);
         }
         #endregion
 

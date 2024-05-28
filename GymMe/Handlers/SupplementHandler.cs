@@ -78,6 +78,9 @@ namespace GymMe.Handlers
 
         public static Response<Supplement> Delete(int id)
         {
+            CartRepository.ClearBySupplement(id);
+            TransactionDetailRepository.ClearBySupplement(id);
+
             bool success = SupplementRepository.Delete(id);
 
             return new Response<Supplement>()

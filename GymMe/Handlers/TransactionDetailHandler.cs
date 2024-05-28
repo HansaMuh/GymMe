@@ -61,6 +61,18 @@ namespace GymMe.Handlers
                 Payload = transactionDetail
             };
         }
+
+        public static Response<List<TransactionDetail>> ClearBySupplement(int supplementId)
+        {
+            bool success = TransactionDetailRepository.ClearBySupplement(supplementId);
+
+            return new Response<List<TransactionDetail>>()
+            {
+                Success = success,
+                Message = success ? "Successfully cleared the transaction details for the supplement." : "No transaction details found",
+                Payload = null
+            };
+        }
         #endregion
 
     }

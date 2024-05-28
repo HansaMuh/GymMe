@@ -85,6 +85,18 @@ namespace GymMe.Handlers
                 Payload = null
             };
         }
+
+        public static Response<List<Cart>> ClearBySupplement(int supplementId)
+        {
+            bool success = CartRepository.ClearBySupplement(supplementId);
+
+            return new Response<List<Cart>>()
+            {
+                Success = success,
+                Message = success ? "Successfully cleared the carts for the supplement." : "No carts found",
+                Payload = null
+            };
+        }
         #endregion
 
     }
