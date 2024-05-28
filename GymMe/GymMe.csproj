@@ -79,6 +79,7 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\CustimerNavbar.css" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -92,7 +93,11 @@
     <Content Include="Views\AdminHistoryDetailView.aspx" />
     <Content Include="Views\AdminHistoryView.aspx" />
     <Content Include="Views\AdminHomePage.aspx" />
+    <Content Include="Views\AdminInsertSupplement.aspx" />
+    <Content Include="Views\AdminManageSupplements.aspx" />
     <Content Include="Views\AdminProfilePage.aspx" />
+    <Content Include="Views\AdminQuequePage.aspx" />
+    <Content Include="Views\AdminUpdateSupplement.aspx" />
     <Content Include="Views\CustomerHistoryPage.aspx" />
     <Content Include="Views\CustomerOrderSupplement.aspx" />
     <Content Include="Views\CustomerProfilePage.aspx" />
@@ -187,12 +192,40 @@
     <Compile Include="Views\AdminHomePage.aspx.designer.cs">
       <DependentUpon>AdminHomePage.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Views\AdminInsertSupplement.aspx.cs">
+      <DependentUpon>AdminInsertSupplement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminInsertSupplement.aspx.designer.cs">
+      <DependentUpon>AdminInsertSupplement.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminManageSupplements.aspx.cs">
+      <DependentUpon>AdminManageSupplements.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminManageSupplements.aspx.designer.cs">
+      <DependentUpon>AdminManageSupplements.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Views\AdminProfilePage.aspx.cs">
       <DependentUpon>AdminProfilePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Views\AdminProfilePage.aspx.designer.cs">
       <DependentUpon>AdminProfilePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminQuequePage.aspx.cs">
+      <DependentUpon>AdminQuequePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminQuequePage.aspx.designer.cs">
+      <DependentUpon>AdminQuequePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminUpdateSupplement.aspx.cs">
+      <DependentUpon>AdminUpdateSupplement.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminUpdateSupplement.aspx.designer.cs">
+      <DependentUpon>AdminUpdateSupplement.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\CustomerHistoryPage.aspx.cs">
       <DependentUpon>CustomerHistoryPage.aspx</DependentUpon>

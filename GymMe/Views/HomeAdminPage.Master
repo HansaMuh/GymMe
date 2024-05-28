@@ -8,17 +8,17 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav>
-            <div>
+        <nav class="navbar">
+            <div class="profie">
                 <a href="AdminProfilePage.aspx">Profile</a>
             </div>
-            <div>
+            <div class="component">
                 <a href="AdminHomePage.aspx">Home</a>
-                manage Supplement
-                order Queque
-                <a href="AdminHistoryView.aspx">TransactionReport</a>
+                <a href="AdminManageSupplements.aspx">Manage Supplements</a>
+                <a href="AdminQuequePage.aspx">order Queque</a>
+                <a href="AdminHistoryView.aspx">Transaction Report</a>
             </div>
-            <div>
+            <div class="logout">
                 <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" />  
             </div>
         </nav>
