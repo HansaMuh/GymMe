@@ -16,7 +16,7 @@
                 <a href="AdminHomePage.aspx">Home</a>
                 <a href="AdminManageSupplements.aspx">Manage Supplements</a>
                 <a href="AdminQuequePage.aspx">order Queque</a>
-                <a href="AdminHistoryView.aspx">Transaction Report</a>
+                <a href="AdminHistoryView.aspx">History Admin</a>
             </div>
             <div class="logout">
                 <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" />  

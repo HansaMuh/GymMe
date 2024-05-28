@@ -1,8 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/GymMeSite.Master" AutoEventWireup="true" CodeBehind="CustomerProfilePage.aspx.cs" Inherits="GymMe.Views.CustomerProfilePage" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title>ProfilePageForCustomer</title>
+        <link href="../CSS/ProfileCustomer.css" rel="stylesheet" />
     </head>
     <body>
         <h1>
@@ -10,7 +11,7 @@
         </h1>
         <section class="GeneralInfo">
             <div class="UserName">
-                <asp:Label ID="LblName" runat="server" Text="Name" />
+                <asp:Label class="LblName" ID="LblName" runat="server" Text="Name" />
                 <asp:TextBox ID="InputName" runat="server" />
             </div>
 
