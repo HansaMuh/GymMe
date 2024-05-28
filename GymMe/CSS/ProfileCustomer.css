@@ -1,0 +1,10 @@
+﻿body {
+    background-color: #FFFFFF;
+}
+
+.GeneralInfo{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:center;
+}

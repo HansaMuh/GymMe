@@ -16,11 +16,48 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.3rem 5%;
-    background: rgba(255, 229, 202, 0.8);
+    padding: 0rem 5%;
+    background-color: cornflowerblue;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 9999;
+}
+
+.profile {
+    color: black;
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+.nav-1 {
+    color: black;
+}
+
+.userCompliment {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-between;
+    gap: 10%;
+    color: black;
+    font-size: 1.5rem;
+}
+
+
+
+.nav-2 {
+    cursor: pointer;
+    font-size: 2rem;
+    padding: 2% 12%;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 4px solid
+}
+
+.content {
+    margin-top: 5rem;
+    padding: 1rem 3%;
 }
