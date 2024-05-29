@@ -1,0 +1,28 @@
+﻿body {
+    background-color: #FFFFFF;
+}
+
+.GridHistory {
+    margin-top: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.GridHistory th, .GridHistory td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.but {
+    background-color: lightskyblue;
+    border: 3px solid;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 2rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}

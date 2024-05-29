@@ -80,6 +80,9 @@
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
     <Content Include="CSS\CustimerNavbar.css" />
+    <Content Include="CSS\DetailCustomer.css" />
+    <Content Include="CSS\HistoryCustomer.css" />
+    <Content Include="CSS\OrderSupplement.css" />
     <Content Include="CSS\ProfileCustomer.css" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -1,0 +1,61 @@
+﻿body {
+    background-color: #FFFFFF;
+}
+
+.Order {
+    margin-top: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.Order th, .Order td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.quan {
+    border: 1px solid;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.but {
+    background-color: lightskyblue;
+    border: 3px solid;
+    border-radius: 10px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2rem;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.Button {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.but-ac {
+    cursor: pointer;
+    margin: 0.5rem 0%;
+    padding: 0.5rem 3%;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid;
+}
+
+
+
+.but-ac:hover {
+    background-color: black;
+    border: 2px solid;
+    color: white;
+}

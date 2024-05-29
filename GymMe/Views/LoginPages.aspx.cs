@@ -64,5 +64,10 @@ namespace GymMe.Views
             }
 
         }
+
+        protected void BtnRegis_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("RegisterPage.aspx");
+        }
     }
 }

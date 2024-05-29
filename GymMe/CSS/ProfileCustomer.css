@@ -2,9 +2,83 @@
     background-color: #FFFFFF;
 }
 
-.GeneralInfo{
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-    align-items:center;
+.GeneralInfo, .UpdatePassword {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+    margin: 0rem 30%;
+    padding: 0.5rem 0%;
+    border-radius: 20px;
+    border: 8px solid;
+}
+
+.UserName, .OldPasswordUser, .NewpasswordUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.UserEmail {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.GenderUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.GenderType {
+    margin-right: 3rem;
+    padding-top: 0.5rem;
+}
+
+.DOBUser {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.dob {
+    padding-bottom: 0.5rem;
+}
+
+.input {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 30px;
+    border: 2px solid;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+.ButGen{
+    cursor:pointer;
+}
+
+.but{
+    margin: 0.5rem 0%;
+    padding: 0.5rem 3%;
+    border-radius:20px;
+    background-color:transparent;
+    border:2px solid;
+}
+
+.but:hover{
+    background-color:black;
+    border:2px solid;
+    color:white;
 }
