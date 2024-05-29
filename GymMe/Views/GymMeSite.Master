@@ -12,20 +12,20 @@
     <form id="form1" runat="server">
         <nav class="customerNavbar">
             <div class="profile">
-                <a href="CustomerProfilePage.aspx">Profile</a>
+                <a class="nav-1" href="CustomerProfilePage.aspx">Profile</a>
             </div>
             
             <div class="userCompliment">
-                <a href="HomePageCustomer.aspx">HomePage</a>
-                <a href="CustomerHistoryPage.aspx">History</a>
-                <a href="CustomerOrderSupplement.aspx">Order</a>
+                <a class="nav-1" href="HomePageCustomer.aspx">HomePage</a>
+                <a class="nav-1" href="CustomerHistoryPage.aspx">History</a>
+                <a class="nav-1" href="CustomerOrderSupplement.aspx">Order</a>
             </div>
             
             <div class="logout">
-                <asp:Button ID="Button1" runat="server" Text="log-out" OnClick="Button1_Click"/>
+                <asp:Button ID="Button1" runat="server" Text="log-out" OnClick="Button1_Click" Class="nav-2"/>
             </div>
         </nav>
-        <div>
+        <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>

@@ -4,19 +4,19 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Login</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <h1>
             Login Page
         </h1>
-        <div>
+        <div class="profile-name">
             <asp:Label ID="lblUsername" runat="server" Text="UserName"></asp:Label>
             <asp:TextBox ID="inputusername" runat="server"></asp:TextBox>
         </div>
 
-        <div>
+        <div class="profile-email">
             <asp:Label ID="lblpassword" runat="server" Text="Password"></asp:Label>
             <asp:TextBox ID="inputpassword" runat="server" TextMode="Password"></asp:TextBox>
         </div>
