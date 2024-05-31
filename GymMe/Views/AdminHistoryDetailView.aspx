@@ -14,7 +14,6 @@
                     <asp:BoundField DataField="SupplementID" HeaderText="SupplementId" SortExpression="SupplementID" />
                     <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
                 </Columns>
-
             </asp:GridView>
         </body>
     </html>

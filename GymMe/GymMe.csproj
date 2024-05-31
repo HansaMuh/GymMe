@@ -32,6 +32,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,6 +44,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -114,6 +118,11 @@
     <Compile Include="Controllers\TransactionDetailController.cs" />
     <Compile Include="Controllers\TransactionHeaderController.cs" />
     <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Datasets\TransactionDataset.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Enumerations\OrderStatusType.cs" />
     <Compile Include="Enumerations\UserGenderType.cs" />
     <Compile Include="Enumerations\UserRoleType.cs" />
@@ -172,6 +181,7 @@
     <Compile Include="Repositories\SupplementRepository.cs" />
     <Compile Include="Repositories\UserRepository.cs" />
     <Compile Include="Utility\SessionManager.cs" />
+    <Compile Include="Utility\TransactionDataGenerator.cs" />
     <Compile Include="Views\AdminHistoryDetailView.aspx.cs">
       <DependentUpon>AdminHistoryDetailView.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -300,6 +310,17 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
+    <Content Include="Datasets\TransactionDataset.xsc">
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Content>
+    <None Include="Datasets\TransactionDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TransactionDataset.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Datasets\TransactionDataset.xss">
+      <DependentUpon>TransactionDataset.xsd</DependentUpon>
+    </Content>
     <None Include="packages.config" />
     <Content Include="Views\GymMeSite.Master" />
     <Content Include="Views\HomeAdminPage.Master" />
@@ -310,7 +331,9 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Reports\" />
+  </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>

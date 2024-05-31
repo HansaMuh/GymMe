@@ -1,27 +1,27 @@
 ﻿using GymMe.Controllers;
-using GymMe.Handlers;
 using GymMe.Models;
 using GymMe.Modules;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Web;
 
 namespace GymMe.Utility
 {
+
     public class SessionManager
     {
+
         public static User GetCurrentUser()
         {
             var userId = HttpContext.Current.Session["UserId"];
+
             if (userId != null)
             {
                 Response<User> response = UserController.Get((int)userId);
-                if(response.Success) 
+                if (response.Success) 
                 {
                     return response.Payload;
                 }
             }
+
             return null;
         }
 
@@ -29,5 +29,7 @@ namespace GymMe.Utility
         {
             HttpContext.Current.Session["UserId"] = user.UserID;
         }
+
     }
+
 }
