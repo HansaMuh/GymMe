@@ -1,0 +1,17 @@
+﻿body {
+    background-color: #FFFFFF;
+}
+
+.GridDetail {
+    margin-top: 1rem;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.GridDetail th, .GridDetail td {
+    border: 1px solid black;
+    padding: 8px;
+    text-align: center;
+    font-size: 1.5rem;
+}
+

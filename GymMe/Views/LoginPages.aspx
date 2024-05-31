@@ -25,8 +25,9 @@
             <asp:CheckBox ID="CheckBox" runat="server" text="Remember me"/>
         </div>
 
-        <div class="SubmitLogin">
-            <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click"/>
+        <div class="Button">
+            <asp:Button ID="BtnSubmit" runat="server" Text="Login" OnClick="BtnSubmit_Click"/>
+            <asp:Button ID="BtnRegis" runat="server" Text="Regis" OnClick="BtnRegis_Click"/>
         </div>
 
         <div class="ErrorMessage">

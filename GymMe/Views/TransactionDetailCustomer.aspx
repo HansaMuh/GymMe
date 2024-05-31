@@ -3,12 +3,13 @@
     <html>
         <head>
             <title>Transaction Detail Customer</title>
+            <link href="../CSS/DetailCustomer.css" rel="stylesheet" />
         </head>
         <body>
             <h1>
                 Transaction Detail
             </h1>
-            <asp:GridView ID="GridTransactionDetail" runat="server" AutoGenerateColumns="False">
+            <asp:GridView ID="GridTransactionDetail" class="GridDetail" runat="server" AutoGenerateColumns="False">
                 <Columns>
                     <asp:BoundField DataField="TransactionID" HeaderText="TransactionId" SortExpression="TransactionID" />
                     <asp:BoundField DataField="SupplementID" HeaderText="SupplementId" SortExpression="SupplementID" />
