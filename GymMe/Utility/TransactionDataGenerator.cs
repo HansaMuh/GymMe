@@ -47,7 +47,7 @@ namespace GymMe.Utility
         }
 
         // Temporary function to generate a report
-        //public static void GenerateReport(List<TransactionHeader> transactionHeaders)
+        //public static ReportDocument GenerateReport(List<TransactionHeader> transactionHeaders)
         //{
         //    // Create a new report document
         //    ReportDocument report = new ReportDocument();
@@ -61,6 +61,8 @@ namespace GymMe.Utility
 
         //    // Set the report parameters
         //    report.SetParameterValue("GrandTotalIncome", CalculateGrandTotalIncome(transactionHeaders));
+        
+        //    return report;
         //}
         #endregion
 
