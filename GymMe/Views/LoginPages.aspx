@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPages.aspx.cs" Inherits="GymMe.Views.LoginPages" %>
+﻿    <%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPages.aspx.cs" Inherits="GymMe.Views.LoginPages" %>
 
 <!DOCTYPE html>
 

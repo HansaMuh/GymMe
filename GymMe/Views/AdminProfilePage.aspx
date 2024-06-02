@@ -3,6 +3,7 @@
     <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
             <title>Admin Profile Page</title>
+            <link href="../CSS/AdminProfile.css" rel="stylesheet" />
         </head>
         <body>
             <h1>
@@ -16,20 +17,20 @@
             
                 <div class="UserEmail">
                     <asp:Label ID="LblEmail" runat="server" Text="Email" />
-                    <asp:TextBox ID="InputEmail" runat="server" />
+                    <asp:TextBox ID="InputEmail" class="input" runat="server" />
                 </div>
             
                 <div class="GenderUser">
                     <asp:Label ID="LblGender" runat="server" Text="Gender" />
-                    <asp:RadioButton ID="InputGenderMale" runat="server" text="Male" GroupName="Gender" />
-                    <asp:RadioButton ID="InputGenderFemale" runat="server" text="Female" GroupName="Gender" />
+                    <asp:RadioButton ID="InputGenderMale" runat="server" text="Male" GroupName="Gender" class="ButGen"/>
+                    <asp:RadioButton ID="InputGenderFemale" runat="server" text="Female" GroupName="Gender" class="ButGen"/>
                 </div>
             
                 <div class="DOBUser">
-                    <asp:Label ID="LblDOB" runat="server" Text="Date of Birth" />
+                    <asp:Label ID="LblDOB" class="dob" runat="server" Text="Date of Birth" />
                     <asp:Calendar ID="InputCalender" runat="server" />
                 </div>
-                <asp:Button ID="ButtonUpdateData" runat="server" Text="Update Information" OnClick="ButtonUpdateData_Click" />
+                <asp:Button ID="ButtonUpdateData" runat="server" Text="Update Information" OnClick="ButtonUpdateData_Click" class="but"/>
             </section>
             <div class="ErrorMessageUpdate">
                 <asp:Label ID="LblErrorMsgUpdate" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
@@ -40,14 +41,14 @@
             <section class="UpdatePassword">
                 <div class="OldPasswordUser">
                     <asp:Label ID="LblOldPassword" runat="server" Text="Old Password" />
-                    <asp:TextBox ID="InputOld" runat="server" TextMode="Password" />
+                    <asp:TextBox ID="InputOld" runat="server" TextMode="Password" class="input"/>
                 </div>
             
                 <div class="NewpasswordUser">
                     <asp:Label ID="LblNewPassword" runat="server" Text="New Password" />
-                    <asp:TextBox ID="InputNew" runat="server" TextMode="Password" />
+                    <asp:TextBox ID="InputNew" runat="server" TextMode="Password" class="input"/>
                 </div>
-                <asp:Button ID="ButtonUpdatePassword" runat="server" Text="Update Password" OnClick="ButtonUpdatePassword_Click" />
+                <asp:Button ID="ButtonUpdatePassword" runat="server" Text="Update Password" OnClick="ButtonUpdatePassword_Click" class="but"/>
             </section>
             <div class="ErrorMessageUpdatePass">
                 <asp:Label ID="LblErrorMsgUpdatePass" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />

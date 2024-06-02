@@ -3,15 +3,16 @@
     <html>
         <head>
             <title>Insert New Supplement</title>
+            <link href="../CSS/InsertNewItemStyle.css" rel="stylesheet" />
         </head>
         <body>
+            <h1>
+                Add new Item
+            </h1>
             <section class="NewItem">
-                <h1>
-                    Add new Item
-                </h1>
                 <div class="SupName">
-                    <asp:Label ID="LblName" runat="server" Text="Name Suppliment" />
-                    <asp:TextBox ID="InputName" runat="server" />
+                    <asp:Label class="name" ID="LblName" runat="server" Text="Name Suppliment" />
+                    <asp:TextBox ID="InputName" runat="server" class="input" />
                 </div>
                 
                 <div class="DOBSup">
@@ -21,14 +22,14 @@
 
                 <div class="Price">
                     <asp:Label ID="LblPricce" runat="server" Text="Price Suppliment" />
-                    <asp:TextBox ID="InputPrice" runat="server" />
+                    <asp:TextBox ID="InputPrice" runat="server" class="input" />
                 </div>
 
                 <div class="ID_SUP">
                     <asp:Label ID="LblId" runat="server" Text="ID Suppliment" />
-                    <asp:TextBox ID="InputId" runat="server" />
+                    <asp:TextBox ID="InputId" runat="server" class="input"/>
                 </div>
-                <asp:Button ID="ButtonInsert" runat="server" Text="Insert Data" OnClick="ButtonInsert_Click"/>
+                <asp:Button ID="ButtonInsert" runat="server" Text="Insert Data" OnClick="ButtonInsert_Click" class="but"/>
             </section>
             <div class="ErrorMessageUpdate">
                 <asp:Label ID="LblErrorMsgUpdate" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />

@@ -44,8 +44,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="CrystalDecisions.Data.AdoDotNetInterop, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+=======
+>>>>>>> styling done 90% and view report
     <Reference Include="CrystalDecisions.Web, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -83,11 +86,17 @@
     <Content Include="App_Data\Database_log.ldf">
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <Content Include="CSS\AdminNav.css" />
+    <Content Include="CSS\AdminProfile.css" />
+    <Content Include="CSS\AdminQuequeStyle.css" />
     <Content Include="CSS\CustimerNavbar.css" />
     <Content Include="CSS\DetailCustomer.css" />
     <Content Include="CSS\HistoryCustomer.css" />
+    <Content Include="CSS\InsertNewItemStyle.css" />
+    <Content Include="CSS\ManageSupplementsStyle.css" />
     <Content Include="CSS\OrderSupplement.css" />
     <Content Include="CSS\ProfileCustomer.css" />
+    <Content Include="CSS\UpdateSupplement.css" />
     <Content Include="Models\Model.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model.edmx</DependentUpon>
@@ -105,6 +114,7 @@
     <Content Include="Views\AdminManageSupplements.aspx" />
     <Content Include="Views\AdminProfilePage.aspx" />
     <Content Include="Views\AdminQuequePage.aspx" />
+    <Content Include="Views\AdminReportPage.aspx" />
     <Content Include="Views\AdminUpdateSupplement.aspx" />
     <Content Include="Views\CustomerHistoryPage.aspx" />
     <Content Include="Views\CustomerOrderSupplement.aspx" />
@@ -233,6 +243,13 @@
     </Compile>
     <Compile Include="Views\AdminQuequePage.aspx.designer.cs">
       <DependentUpon>AdminQuequePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\AdminReportPage.aspx.cs">
+      <DependentUpon>AdminReportPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\AdminReportPage.aspx.designer.cs">
+      <DependentUpon>AdminReportPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Views\AdminUpdateSupplement.aspx.cs">
       <DependentUpon>AdminUpdateSupplement.aspx</DependentUpon>
