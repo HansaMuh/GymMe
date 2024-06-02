@@ -3,12 +3,13 @@
     <html>
         <head>
             <title>ManageSupplement</title>
+            <link href="../CSS/ManageSupplementsStyle.css" rel="stylesheet" />
         </head>
         <body>
+            <h1>
+                Manage Supplement
+            </h1>
             <section class="supp-detail">
-                <h1>
-                    Manage Supplement
-                </h1>
                 <asp:GridView ID="GridSupplement" DataKeyNames="SupplementId" runat="server" AutoGenerateColumns="False" OnRowEditing="GridViewSupplement_RowEditing" OnRowDeleting="GridViewSupplement_RowDeleting" OnSelectedIndexChanged="GridSupplement_SelectedIndexChanged">
                     <Columns>
                         <asp:BoundField DataField="SupplementName" HeaderText="Name" SortExpression="SupplementName" />
@@ -18,7 +19,7 @@
                         <asp:CommandField ButtonType="Button" HeaderText="Action" ShowCancelButton="False" ShowDeleteButton="True" ShowEditButton="True" ShowHeader="True" />
                     </Columns>
                 </asp:GridView>
-            <asp:Button runat="server" Text="Insert new Supplement" OnClick="Unnamed1_Click" />
+            <asp:Button runat="server" Text="Insert new Supplement" OnClick="Unnamed1_Click" class="but-ac"/>
             </section>
         </body>
     </html>

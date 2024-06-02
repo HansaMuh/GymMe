@@ -12,7 +12,7 @@ body {
     font-family: "M PLUS 1 Code", sans-serif;
 }
 
-.customerNavbar {
+.adminnavbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -25,26 +25,25 @@ body {
     z-index: 9999;
 }
 
-.profile {
+.pofile-nav {
     text-align: center;
     font-size: 4rem;
     font-weight: 700;
-}
-
-.nav-1 {
     color: black;
 }
 
-.userCompliment {
+.components{
+    color:black;
+}
+
+.component {
     display: flex;
     flex-direction: row;
     text-align: center;
     justify-content: space-between;
     gap: 10%;
-    color: black;
     font-size: 1.5rem;
 }
-
 
 
 .nav-2 {
@@ -60,3 +59,4 @@ body {
     margin-top: 5rem;
     padding: 1rem 3%;
 }
+

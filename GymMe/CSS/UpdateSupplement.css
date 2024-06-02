@@ -1,0 +1,49 @@
+﻿body {
+    background-color: #FFFFFF;
+}
+
+.Update-suppliment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid;
+    margin: 0rem 30%;
+    padding: 0.5rem 0%;
+    border-radius: 20px;
+    border: 8px solid;
+}
+
+.SupName, .DOBSup, .Price, .ID_SUP {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.input {
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 30px;
+    border: 2px solid;
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+
+.but {
+    margin: 0.5rem 0%;
+    padding: 0.5rem 3%;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid;
+    cursor: pointer
+}
+
+    .but:hover {
+        background-color: black;
+        border: 2px solid;
+        color: white;
+    }

@@ -3,16 +3,17 @@
     <html>
         <head>
             <title>Transaction queque</title>
+            <link href="../CSS/AdminQuequeStyle.css" rel="stylesheet" />
         </head>
         <body>
             <section class="Queque">
                 <h1>
-                    History Page
+                    Queque Page
                 </h1>
+                <h2>
+                    Unhandled-Section
+                </h2>
                 <div class="que-Unhandled">
-                    <h2>
-                        Unhandled-Section
-                    </h2>
                     <asp:GridView ID="UnhandledSituation" runat="server" AutoGenerateColumns="False" DataKeyNames="TransactionID">
                         <Columns>
                             <asp:BoundField DataField="TransactionID" HeaderText="TransactionId" SortExpression="TransactionID" />
@@ -21,17 +22,16 @@
                             <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
                             <asp:TemplateField HeaderText="Action" ShowHeader="True">
                                 <ItemTemplate>
-                                    <asp:Button ID="WillHandled" runat="server" Text="Handled" CommandArgument='<%# Eval("TransactionID") %>' OnClick="ClickHandle" />
+                                    <asp:Button ID="WillHandled" class="but" runat="server" Text="Handled" CommandArgument='<%# Eval("TransactionID") %>' OnClick="ClickHandle" />
                                 </ItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
                 </div>
-
+                <h2>
+                    handled-Section
+                </h2>
                 <div class="que-handled">
-                    <h2>
-                        handled-Section
-                    </h2>
                     <asp:GridView ID="HandledSituation" runat="server" AutoGenerateColumns="False">
                         <Columns>
                             <asp:BoundField DataField="TransactionID" HeaderText="TransactionId" SortExpression="TransactionID" />

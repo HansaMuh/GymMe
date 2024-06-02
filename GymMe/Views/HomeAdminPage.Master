@@ -5,24 +5,26 @@
 <html>
 <head runat="server">
     <title>Home Admin</title>
+    <link href="../CSS/AdminNav.css" rel="stylesheet" />
 </head>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar">
+        <nav class="adminnavbar">
             <div class="profie">
-                <a href="AdminProfilePage.aspx">Profile</a>
+                <a class="pofile-nav" href="AdminProfilePage.aspx">Profile</a>
             </div>
             <div class="component">
-                <a href="AdminHomePage.aspx">Home</a>
-                <a href="AdminManageSupplements.aspx">Manage Supplements</a>
-                <a href="AdminQuequePage.aspx">order Queque</a>
-                <a href="AdminHistoryView.aspx">History Admin</a>
+                <a class="components" href="AdminHomePage.aspx">Home</a>
+                <a class="components" href="AdminManageSupplements.aspx">Manage Supplements</a>
+                <a class="components" href="AdminQuequePage.aspx">order Queque</a>
+                <a class="components" href="AdminHistoryView.aspx">History</a>
+                <a class="components" href="AdminReportPage.aspx">Report</a>
             </div>
             <div class="logout">
-                <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" />  
+                <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" class="nav-2"/>  
             </div>
         </nav>
-        <div>
+        <div class="content">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
