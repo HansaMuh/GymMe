@@ -4,11 +4,11 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-            <title>Report Page</title>
+            <title>Transaction Reports | GymMe</title>
         </head>
         <body>
             <div>
-                <CR:CrystalReportViewer ID="CrystalReportViewer1" runat="server" AutoDataBind="true" />
+                <CR:CrystalReportViewer ID="CrystalReportViewer" runat="server" AutoDataBind="true" />
             </div>
         </body>
     </html>

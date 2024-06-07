@@ -2,16 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
-        <title>ProfilePageForCustomer</title>
+        <title>Profile | GymMe</title>
         <link href="../CSS/ProfileCustomer.css" rel="stylesheet" />
     </head>
     <body>
         <h1>
-            Customer Information
+            User Profile
         </h1>
         <section class="GeneralInfo">
             <div class="UserName">
-                <asp:Label class="name" ID="LblName" runat="server" Text="Name" />
+                <asp:Label class="name" ID="LblName" runat="server" Text="Username" />
                 <asp:TextBox ID="InputName" class="input" runat="server" />
             </div>
 
@@ -33,7 +33,7 @@
                 <asp:Calendar ID="InputCalender" runat="server" />
             </div>
             
-            <asp:Button ID="ButtonUpdateDataInfo" runat="server" Text="Update Information" OnClick="ButtonUpdateData_Click" class="but"/>
+            <asp:Button ID="ButtonUpdateDataInfo" runat="server" Text="Update Profile" OnClick="ButtonUpdateData_Click" class="but"/>
         </section>
 
         <div class="ErrorMessageUpdate">
@@ -41,7 +41,7 @@
         </div>
 
         <h1>
-            Update Password
+            User Password
         </h1>
         <section class="UpdatePassword">
             <div class="OldPasswordUser">

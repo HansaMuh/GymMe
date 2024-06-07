@@ -2,16 +2,16 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <html xmlns="http://www.w3.org/1999/xhtml">
         <head>
-            <title>Admin Profile Page</title>
+            <title>Profile | GymMe</title>
             <link href="../CSS/AdminProfile.css" rel="stylesheet" />
         </head>
         <body>
             <h1>
-                Admin Information
+                User Profile
             </h1>
             <section class="GeneralInfo">
                 <div class="UserName">
-                    <asp:Label ID="LblName" runat="server" Text="Name" />
+                    <asp:Label ID="LblName" runat="server" Text="Username" />
                     <asp:TextBox ID="InputName" runat="server" />
                 </div>
             
@@ -30,13 +30,13 @@
                     <asp:Label ID="LblDOB" class="dob" runat="server" Text="Date of Birth" />
                     <asp:Calendar ID="InputCalender" runat="server" />
                 </div>
-                <asp:Button ID="ButtonUpdateData" runat="server" Text="Update Information" OnClick="ButtonUpdateData_Click" class="but"/>
+                <asp:Button ID="ButtonUpdateData" runat="server" Text="Update Profile" OnClick="ButtonUpdateData_Click" class="but"/>
             </section>
             <div class="ErrorMessageUpdate">
                 <asp:Label ID="LblErrorMsgUpdate" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
             </div>
             <h1>
-                Admin Password
+                User Password
             </h1>
             <section class="UpdatePassword">
                 <div class="OldPasswordUser">

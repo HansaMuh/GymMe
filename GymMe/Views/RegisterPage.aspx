@@ -4,16 +4,16 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title>RegisterPage</title>
+    <title>Register | GymMe</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <h1>
-            Register Pages
+            Register to GymMe
         </h1>
 
         <div class="UserName">
-            <asp:Label ID="LblName" runat="server" Text="Name" />
+            <asp:Label ID="LblName" runat="server" Text="Username" />
             <asp:TextBox ID="InputName" runat="server" />
         </div>
 
@@ -44,7 +44,7 @@
         </div>
 
         <div class="SubmitRegis">
-            <asp:Button ID="BtnSubmit" runat="server" Text="Submit" OnClick="BtnSubmit_Click" />
+            <asp:Button ID="BtnSubmit" runat="server" Text="Register" OnClick="BtnSubmit_Click" />
         </div>
 
         <div class="ErrorMessage">

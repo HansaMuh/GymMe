@@ -1,10 +1,7 @@
-﻿using CrystalDecisions.CrystalReports.Engine;
-using GymMe.Datasets;
+﻿using GymMe.Datasets;
 using GymMe.Models;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 
 namespace GymMe.Utility
 {
@@ -19,55 +16,29 @@ namespace GymMe.Utility
 
             TransactionDataset.TransactionHeadersDataTable header = dataset.TransactionHeaders;
             TransactionDataset.TransactionDetailsDataTable details = dataset.TransactionDetails;
-
-            decimal grandTotalIncome = 0;
+            TransactionDataset.SupplementsDataTable supplements = dataset.Supplements;
 
             foreach (TransactionHeader th in transactionHeaders)
             {
-                decimal subtotalIncome = 0;
-
                 foreach (TransactionDetail td in th.TransactionDetails)
                 {
                     DataRow detailRow = GetDetailRow(details, td);
                     details.Rows.Add(detailRow);
 
-                    subtotalIncome += td.Quantity * td.Supplement.SupplementPrice;
+                    DataRow supplementRow = GetSupplementRow(supplements, td.Supplement);
+                    supplements.Rows.Add(supplementRow);
                 }
 
-                DataRow headerRow = GetHeaderRow(header, th, subtotalIncome);
+                DataRow headerRow = GetHeaderRow(header, th);
                 header.Rows.Add(headerRow);
-
-                grandTotalIncome += subtotalIncome;
-
-                DataRow totalIncomeRow = GetTotalIncomeRow(header, grandTotalIncome);
-                header.Rows.Add(totalIncomeRow);
             }
 
             return dataset;
         }
-
-        // Temporary function to generate a report
-        //public static ReportDocument GenerateReport(List<TransactionHeader> transactionHeaders)
-        //{
-        //    // Create a new report document
-        //    ReportDocument report = new ReportDocument();
-
-        //    // Load the report template
-        //    report.Load(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Reports", "SalesReportTemplate.rpt"));
-
-        //    // Set the dataset for the report
-        //    TransactionDataset dataset = CreateDataset(transactionHeaders);
-        //    report.SetDataSource(dataset);
-
-        //    // Set the report parameters
-        //    report.SetParameterValue("GrandTotalIncome", CalculateGrandTotalIncome(transactionHeaders));
-        
-        //    return report;
-        //}
         #endregion
 
         #region Methods: Utility
-        private static DataRow GetHeaderRow(TransactionDataset.TransactionHeadersDataTable table, TransactionHeader th, decimal subtotalIncome)
+        private static DataRow GetHeaderRow(TransactionDataset.TransactionHeadersDataTable table, TransactionHeader th)
         {
             DataRow headerRow = table.NewRow();
 
@@ -75,9 +46,6 @@ namespace GymMe.Utility
             headerRow["UserID"] = th.UserID;
             headerRow["TransactionDate"] = th.TransactionDate;
             headerRow["Status"] = th.Status;
-            headerRow["SubtotalIncome"] = subtotalIncome;
-
-            headerRow["GrandTotalIncome"] = null;
 
             return headerRow;
         }
@@ -93,41 +61,18 @@ namespace GymMe.Utility
             return detailRow;
         }
 
-        private static DataRow GetTotalIncomeRow(TransactionDataset.TransactionHeadersDataTable table, decimal grandTotalIncome)
+        private static DataRow GetSupplementRow(TransactionDataset.SupplementsDataTable table, Supplement td)
         {
-            DataRow totalIncomeRow = table.NewRow();
+            DataRow supplementRow = table.NewRow();
 
-            totalIncomeRow["TransactionID"] = null;
-            totalIncomeRow["UserID"] = null;
-            totalIncomeRow["TransactionDate"] = null;
-            totalIncomeRow["Status"] = null;
-            totalIncomeRow["SubtotalIncome"] = null;
+            supplementRow["SupplementID"] = td.SupplementID;
+            supplementRow["SupplementName"] = td.SupplementName;
+            supplementRow["SupplementExpiryDate"] = td.SupplementExpiryDate;
+            supplementRow["SupplementPrice"] = td.SupplementPrice;
+            supplementRow["SupplementTypeID"] = td.SupplementTypeID;
 
-            totalIncomeRow["GrandTotalIncome"] = grandTotalIncome;
-
-            return totalIncomeRow;
+            return supplementRow;
         }
-
-        // Temporary function to calculate grand total income
-        //private static decimal CalculateGrandTotalIncome(List<TransactionHeader> transactionHeaders)
-        //{
-        //    decimal grandTotalIncome = 0;
-
-        //    foreach (TransactionHeader th in transactionHeaders)
-        //    {
-        //        decimal transactionSubTotal = 0;
-
-        //        foreach (TransactionDetail td in th.TransactionDetails)
-        //        {
-        //            decimal subTotalValue = td.Quantity * td.Supplement.SupplementPrice;
-        //            transactionSubTotal += subTotalValue;
-        //        }
-
-        //        grandTotalIncome += transactionSubTotal;
-        //    }
-
-        //    return grandTotalIncome;
-        //}
         #endregion
 
     }

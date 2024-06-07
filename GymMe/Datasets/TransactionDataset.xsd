@@ -2,11 +2,9 @@
 <xs:schema id="TransactionDataset" targetNamespace="http://tempuri.org/TransactionDataset.xsd" xmlns:mstns="http://tempuri.org/TransactionDataset.xsd" xmlns="http://tempuri.org/TransactionDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DatabaseConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DatabaseConnectionString.ConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DatabaseConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DatabaseConnectionString1 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DatabaseConnectionString1.ConnectionString" Provider="System.Data.SqlClient" />
-          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DatabaseConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DatabaseConnectionString2 (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DatabaseConnectionString2.ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Web.config" AppSettingsPropertyName="DatabaseConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DatabaseConnectionString (Web.config)" ParameterPrefix="@" PropertyReference="AppConfig.System.Configuration.ConfigurationManager.0.ConnectionStrings.DatabaseConnectionString.ConnectionString" Provider="Microsoft.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransactionHeadersTableAdapter" GeneratorDataComponentClassName="TransactionHeadersTableAdapter" Name="TransactionHeaders" UserDataComponentName="TransactionHeadersTableAdapter">
@@ -59,7 +57,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TransactionDetailsTableAdapter" GeneratorDataComponentClassName="TransactionDetailsTableAdapter" Name="TransactionDetails" UserDataComponentName="TransactionDetailsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DatabaseConnectionString1 (Web.config)" DbObjectName="dbo.TransactionDetails" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DatabaseConnectionString (Web.config)" DbObjectName="dbo.TransactionDetails" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>INSERT INTO [dbo].[TransactionDetails] ([TransactionID], [SupplementID], [Quantity]) VALUES (@TransactionID, @SupplementID, @Quantity)</CommandText>
@@ -87,7 +85,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SupplementsTableAdapter" GeneratorDataComponentClassName="SupplementsTableAdapter" Name="Supplements" UserDataComponentName="SupplementsTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DatabaseConnectionString2 (Web.config)" DbObjectName="dbo.Supplements" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DatabaseConnectionString (Web.config)" DbObjectName="dbo.Supplements" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM [dbo].[Supplements] WHERE (([SupplementID] = @Original_SupplementID))</CommandText>
@@ -197,4 +195,10 @@
       <xs:field xpath="mstns:SupplementID" />
     </xs:unique>
   </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="FK_TransactionDetails_ToTransactionHeaders" msdata:parent="TransactionHeaders" msdata:child="TransactionDetails" msdata:parentkey="TransactionID" msdata:childkey="TransactionID" msprop:Generator_UserParentTable="TransactionHeaders" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_RelationVarName="relationFK_TransactionDetails_ToTransactionHeaders" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_ParentPropName="TransactionHeadersRow" msprop:Generator_UserRelationName="FK_TransactionDetails_ToTransactionHeaders" />
+      <msdata:Relationship name="FK_TransactionDetails_ToSupplements" msdata:parent="Supplements" msdata:child="TransactionDetails" msdata:parentkey="SupplementID" msdata:childkey="SupplementID" msprop:Generator_UserParentTable="Supplements" msprop:Generator_UserChildTable="TransactionDetails" msprop:Generator_RelationVarName="relationFK_TransactionDetails_ToSupplements" msprop:Generator_UserRelationName="FK_TransactionDetails_ToSupplements" msprop:Generator_ChildPropName="GetTransactionDetailsRows" msprop:Generator_ParentPropName="SupplementsRow" />
+    </xs:appinfo>
+  </xs:annotation>
 </xs:schema>

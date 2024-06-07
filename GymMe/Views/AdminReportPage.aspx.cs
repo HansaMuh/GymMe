@@ -1,17 +1,31 @@
-﻿using System;
+﻿using GymMe.Controllers;
+using GymMe.Datasets;
+using GymMe.Models;
+using GymMe.Modules;
+using GymMe.Reports;
+using GymMe.Utility;
+using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace GymMe.Views
 {
-    public partial class AdminReportPage : System.Web.UI.Page
+
+    public partial class AdminReportPage : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
+            Response<List<TransactionHeader>> response = TransactionHeaderController.GetAll();
+            List<TransactionHeader> list = response.Payload;
 
+            TransactionDataset dataset = TransactionDataGenerator.CreateDataset(list);
+            TransactionReport report = new TransactionReport();
+            report.SetDataSource(dataset);
+            
+            CrystalReportViewer.ReportSource = report;
         }
+
     }
+
 }

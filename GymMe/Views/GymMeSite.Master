@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Navbar</title>
+    <title>GymMe</title>
     <!--css-->
     <link href="../CSS/CustimerNavbar.css" rel="stylesheet" />
 </head>
@@ -16,13 +16,13 @@
             </div>
             
             <div class="userCompliment">
-                <a class="nav-1" href="HomePageCustomer.aspx">HomePage</a>
-                <a class="nav-1" href="CustomerHistoryPage.aspx">History</a>
-                <a class="nav-1" href="CustomerOrderSupplement.aspx">Order</a>
+                <a class="nav-1" href="HomePageCustomer.aspx">Home</a>
+                <a class="nav-1" href="CustomerHistoryPage.aspx">Transaction History</a>
+                <a class="nav-1" href="CustomerOrderSupplement.aspx">Order Supplement</a>
             </div>
             
             <div class="logout">
-                <asp:Button ID="Button1" runat="server" Text="log-out" OnClick="Button1_Click" Class="nav-2"/>
+                <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" Class="nav-2"/>
             </div>
         </nav>
         <div class="content">

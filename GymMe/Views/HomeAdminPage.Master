@@ -4,7 +4,7 @@
 
 <html>
 <head runat="server">
-    <title>Home Admin</title>
+    <title>GymMe</title>
     <link href="../CSS/AdminNav.css" rel="stylesheet" />
 </head>
 <body>
@@ -16,12 +16,12 @@
             <div class="component">
                 <a class="components" href="AdminHomePage.aspx">Home</a>
                 <a class="components" href="AdminManageSupplements.aspx">Manage Supplements</a>
-                <a class="components" href="AdminQuequePage.aspx">order Queque</a>
-                <a class="components" href="AdminHistoryView.aspx">History</a>
-                <a class="components" href="AdminReportPage.aspx">Report</a>
+                <a class="components" href="AdminQuequePage.aspx">Order Queues</a>
+                <a class="components" href="AdminHistoryView.aspx">Order History</a>
+                <a class="components" href="AdminReportPage.aspx">Transaction Reports</a>
             </div>
             <div class="logout">
-                <asp:Button ID="Button1" runat="server" Text="Log-out" OnClick="Button1_Click" class="nav-2"/>  
+                <asp:Button ID="Button1" runat="server" Text="Logout" OnClick="Button1_Click" class="nav-2"/>  
             </div>
         </nav>
         <div class="content">
