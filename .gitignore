@@ -361,5 +361,3 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
-/GymMe/App_Data/Database.mdf
-/GymMe/App_Data/Database_log.ldf
