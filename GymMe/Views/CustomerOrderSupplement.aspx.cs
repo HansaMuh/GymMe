@@ -19,12 +19,6 @@ namespace GymMe.Views
             }
         }
 
-        protected void RefreshData()
-        {
-            Response<List<Supplement>> supplement = SupplementController.GetAll();
-            SupplementGrid.DataSource = supplement.Payload;
-            SupplementGrid.DataBind();
-        }
 
         protected void SupplementGrid_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -84,5 +78,20 @@ namespace GymMe.Views
             }
         }
 
+        protected void RefreshData()
+        {
+            Response<List<Supplement>> supplement = SupplementController.GetAll();
+            SupplementGrid.DataSource = supplement.Payload;
+            SupplementGrid.DataBind();
+
+            Response<List<Cart>> cart = CartController.GetAll();
+            GridViewCart.DataSource = cart.Payload;
+            GridViewCart.DataBind();
+        }
+
+        protected void GridViewCart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
