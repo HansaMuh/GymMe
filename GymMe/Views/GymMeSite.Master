@@ -7,6 +7,7 @@
     <title>GymMe</title>
     <!--css-->
     <link href="../CSS/CustimerNavbar.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder0" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">

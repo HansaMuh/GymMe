@@ -5,7 +5,8 @@
 <html>
 <head runat="server">
     <title>GymMe</title>
-    <<link href="../CSS/AdminNav.css" rel="stylesheet" />
+    <link href="../CSS/AdminNav.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="ContentPlaceHolder0" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">

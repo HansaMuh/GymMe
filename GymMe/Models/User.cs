@@ -23,11 +23,11 @@ namespace GymMe.Models
     
         public int UserID { get; set; }
         public string UserName { get; set; }
+        public string UserPass { get; set; }
         public string UserEmail { get; set; }
         public System.DateTime UserDOB { get; set; }
         public string UserGender { get; set; }
         public string UserRole { get; set; }
-        public string UserPass { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Cart> Carts { get; set; }

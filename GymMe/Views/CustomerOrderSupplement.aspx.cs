@@ -40,6 +40,8 @@ namespace GymMe.Views
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }
             }
+
+            RefreshData();
         }
 
         protected void btnClearCart_Click(object sender, EventArgs e)
@@ -58,6 +60,8 @@ namespace GymMe.Views
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }
             }
+
+            RefreshData();
         }
 
         protected void btnCheckout_Click(object sender, EventArgs e)
@@ -76,22 +80,19 @@ namespace GymMe.Views
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }
             }
+
+            RefreshData();
         }
 
         protected void RefreshData()
         {
-            Response<List<Supplement>> supplement = SupplementController.GetAll();
-            SupplementGrid.DataSource = supplement.Payload;
+            Response<List<Supplement>> supplements = SupplementController.GetAll();
+            SupplementGrid.DataSource = supplements.Payload;
             SupplementGrid.DataBind();
 
-            Response<List<Cart>> cart = CartController.GetAll();
-            GridViewCart.DataSource = cart.Payload;
+            Response<List<Cart>> carts = CartController.GetAll();
+            GridViewCart.DataSource = carts.Payload;
             GridViewCart.DataBind();
-        }
-
-        protected void GridViewCart_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

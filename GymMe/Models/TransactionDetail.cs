@@ -17,6 +17,7 @@ namespace GymMe.Models
         public int TransactionID { get; set; }
         public int SupplementID { get; set; }
         public int Quantity { get; set; }
+        public int ID { get; set; }
     
         public virtual Supplement Supplement { get; set; }
         public virtual TransactionHeader TransactionHeader { get; set; }
