@@ -363,3 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 /GymMe/App_Data/Database.mdf
 /GymMe/App_Data/Database_log.ldf
+/GymMe/App_Data/Database.mdf
+/GymMe/App_Data/Database_log.ldf
