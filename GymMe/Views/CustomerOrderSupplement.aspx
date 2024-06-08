@@ -32,6 +32,16 @@
                 <asp:Button ID="Checkout" runat="server" Text="Checkout Order" OnClick="btnCheckout_Click" class="but-ac"/>
             </div>
 
+            <h1>
+                List of Customer Cart
+            </h1>
+            <asp:GridView ID="GridViewCart" class="Order" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="GridViewCart_SelectedIndexChanged" style="width: 249px">
+                <Columns>
+                    <asp:BoundField DataField="CartID" HeaderText="CartId" SortExpression="CartID" />
+                    <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
+                </Columns>
+
+            </asp:GridView>
         </body>
     </html>
 </asp:Content>
