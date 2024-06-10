@@ -107,8 +107,16 @@ namespace GymMe.Handlers
                 };
             }
 
-            Cart cart = CartFactory.Create(userId, supplementId, quantity);
-            CartRepository.Insert(cart);
+            Cart cart = CartRepository.Get(userId, supplementId);
+            if (cart is null)
+            {
+                Cart newCart = CartFactory.Create(userId, supplementId, quantity);
+                CartRepository.Insert(newCart);
+            }
+            else
+            {
+                CartRepository.Update(cart.CartID, cart.UserID, cart.SupplementID, cart.Quantity + quantity);
+            }
 
             return new Response<Supplement>()
             {

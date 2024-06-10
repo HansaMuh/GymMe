@@ -50,6 +50,19 @@ namespace GymMe.Handlers
             };
         }
 
+        public static Response<Cart> Get(int userId, int supplementId)
+        {
+            Cart cart = CartRepository.Get(userId, supplementId);
+            bool isNull = cart is null;
+
+            return new Response<Cart>()
+            {
+                Success = !isNull,
+                Message = isNull ? "Cart not found" : "Cart found",
+                Payload = cart
+            };
+        }
+
         public static Response<Cart> Create(int userId, int supplementId, int quantity)
         {
             Cart cart = CartFactory.Create(userId, supplementId, quantity);
@@ -59,6 +72,19 @@ namespace GymMe.Handlers
                 Success = true,
                 Message = "Successfully created the cart.",
                 Payload = cart
+            };
+        }
+
+        public static Response<Cart> Update(int id, int userId, int supplementId, int quantity)
+        {
+            Cart cart = CartRepository.Update(id, userId, supplementId, quantity);
+            bool isNull = cart is null;
+
+            return new Response<Cart>()
+            {
+                Success = !isNull,
+                Message = isNull ? "Cart not found" : "Successfully updated the cart.",
+                Payload = !isNull ? cart : null
             };
         }
 

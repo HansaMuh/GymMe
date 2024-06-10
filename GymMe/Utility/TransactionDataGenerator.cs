@@ -16,17 +16,13 @@ namespace GymMe.Utility
 
             TransactionDataset.TransactionHeadersDataTable header = dataset.TransactionHeaders;
             TransactionDataset.TransactionDetailsDataTable details = dataset.TransactionDetails;
-            TransactionDataset.SupplementsDataTable supplements = dataset.Supplements;
 
             foreach (TransactionHeader th in transactionHeaders)
             {
                 foreach (TransactionDetail td in th.TransactionDetails)
                 {
-                    DataRow detailRow = GetDetailRow(details, td);
+                    DataRow detailRow = GetDetailRow(details, td, td.Supplement);
                     details.Rows.Add(detailRow);
-
-                    DataRow supplementRow = GetSupplementRow(supplements, td.Supplement);
-                    supplements.Rows.Add(supplementRow);
                 }
 
                 DataRow headerRow = GetHeaderRow(header, th);
@@ -50,28 +46,16 @@ namespace GymMe.Utility
             return headerRow;
         }
 
-        private static DataRow GetDetailRow(TransactionDataset.TransactionDetailsDataTable table, TransactionDetail td)
+        private static DataRow GetDetailRow(TransactionDataset.TransactionDetailsDataTable table, TransactionDetail td, Supplement supplement)
         {
             DataRow detailRow = table.NewRow();
 
             detailRow["TransactionID"] = td.TransactionID;
             detailRow["SupplementID"] = td.SupplementID;
             detailRow["Quantity"] = td.Quantity;
+            detailRow["Income"] = supplement.SupplementPrice * td.Quantity;
 
             return detailRow;
-        }
-
-        private static DataRow GetSupplementRow(TransactionDataset.SupplementsDataTable table, Supplement td)
-        {
-            DataRow supplementRow = table.NewRow();
-
-            supplementRow["SupplementID"] = td.SupplementID;
-            supplementRow["SupplementName"] = td.SupplementName;
-            supplementRow["SupplementExpiryDate"] = td.SupplementExpiryDate;
-            supplementRow["SupplementPrice"] = td.SupplementPrice;
-            supplementRow["SupplementTypeID"] = td.SupplementTypeID;
-
-            return supplementRow;
         }
         #endregion
 
