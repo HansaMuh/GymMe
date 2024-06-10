@@ -18,6 +18,11 @@ namespace GymMe.Controllers
             return UserHandler.GetAll();
         }
 
+        public static Response<List<User>> GetAllCustomers()
+        {
+            return UserHandler.GetAllCustomers();
+        }
+
         public static Response<User> Get(int id)
         {
             return UserHandler.Get(id);

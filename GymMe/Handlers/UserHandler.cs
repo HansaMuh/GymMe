@@ -25,6 +25,19 @@ namespace GymMe.Handlers
             };
         }
 
+        public static Response<List<User>> GetAllCustomers()
+        {
+            List<User> users = UserRepository.GetAllCustomers();
+            bool isEmpty = users.Count == 0;
+
+            return new Response<List<User>>()
+            {
+                Success = !isEmpty,
+                Message = isEmpty ? "No customers found" : "Customers found",
+                Payload = users
+            };
+        }
+
         public static Response<User> Get(int id)
         {
             User user = UserRepository.Get(id);

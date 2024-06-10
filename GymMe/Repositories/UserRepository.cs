@@ -20,6 +20,11 @@ namespace GymMe.Repositories
             return Database.Users.ToList();
         }
 
+        public static List<User> GetAllCustomers()
+        {
+            return Database.Users.Where(u => u.UserRole.Equals("Customer")).ToList();
+        }
+
         public static User Get(int id)
         {
             return Database.Users.FirstOrDefault(u => u.UserID == id);
