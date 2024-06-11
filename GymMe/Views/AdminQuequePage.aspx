@@ -26,6 +26,13 @@
                 </Columns>
             </asp:GridView>
         </div>
+        <div>
+            <asp:Label ID="LblSuccessionMsg" runat="server" Text="" Visible="false" ForeColor="Green" />
+        </div>
+        <div>
+            <asp:Label ID="LblErrorMsg" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
+        </div>
+
         <h2>
             Handled Orders
         </h2>

@@ -28,11 +28,6 @@ namespace GymMe.Controllers
             return UserHandler.Get(id);
         }
 
-        public static Response<List<User>> GetRole(string role)
-        {
-            return UserHandler.GetRole(role);
-        }
-
         public static Response<User> Authenticate(string name, string pass)
         {
             string errorMessage = ValidateAuthentication(name, pass);

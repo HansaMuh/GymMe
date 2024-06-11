@@ -29,6 +29,9 @@
         </div>
         <asp:Button ID="ButtonInsert" runat="server" Text="Insert" OnClick="ButtonInsert_Click" class="but"/>
     </section>
+    <div>
+        <asp:Label ID="LblSuccessionMsg" runat="server" Text="" Visible="false" ForeColor="Green" />
+    </div>
     <div class="ErrorMessageUpdate">
         <asp:Label ID="LblErrorMsgUpdate" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
     </div>

@@ -30,6 +30,9 @@
         </div>
         <asp:Button ID="ButtonUpdateData" runat="server" Text="Update Profile" OnClick="ButtonUpdateData_Click" class="but"/>
     </section>
+    <div>
+        <asp:Label ID="LblSuccessionMsg" runat="server" Text="" Visible="false" ForeColor="Green" />
+    </div>
     <div class="ErrorMessageUpdate">
         <asp:Label ID="LblErrorMsgUpdate" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
     </div>
@@ -48,6 +51,9 @@
         </div>
         <asp:Button ID="ButtonUpdatePassword" runat="server" Text="Update Password" OnClick="ButtonUpdatePassword_Click" class="but"/>
     </section>
+    <div>
+        <asp:Label ID="LblSuccessionPassMsg" runat="server" Text="" Visible="false" ForeColor="Green" />
+    </div>
     <div class="ErrorMessageUpdatePass">
         <asp:Label ID="LblErrorMsgUpdatePass" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
     </div>

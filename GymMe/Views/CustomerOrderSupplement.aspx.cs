@@ -9,8 +9,10 @@ using System.Web.UI.WebControls;
 
 namespace GymMe.Views
 {
-    public partial class CustomerOrderSupplement : System.Web.UI.Page
+
+    public partial class CustomerOrderSupplement : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -18,7 +20,6 @@ namespace GymMe.Views
                 RefreshData();
             }
         }
-
 
         protected void SupplementGrid_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -32,11 +33,15 @@ namespace GymMe.Views
                 Response<Supplement> response = SupplementController.Order(user.UserID, supplementId, quantity);
                 if (response.Success)
                 {
-                    LblSucsessMsg.Visible = false;
+                    LblSuccessionMsg.Visible = true;
+                    LblSuccessionMsg.Text = response.Message;
+
                     LblErrorMsg.Visible = false;
                 }
                 else
                 {
+                    LblSuccessionMsg.Visible = false;
+
                     LblErrorMsg.Visible = true;
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }
@@ -53,10 +58,15 @@ namespace GymMe.Views
                 Response<List<Cart>> response = CartController.Clear(user.UserID);
                 if (response.Success)
                 {
+                    LblSuccessionMsg.Visible = true;
+                    LblSuccessionMsg.Text = response.Message;
+
                     LblErrorMsg.Visible = false;
                 }
                 else
                 {
+                    LblSuccessionMsg.Visible = false;
+
                     LblErrorMsg.Visible = true;
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }
@@ -73,13 +83,15 @@ namespace GymMe.Views
                 Response<TransactionHeader> response = TransactionHeaderController.Checkout(user.UserID);
                 if (response.Success)
                 {
+                    LblSuccessionMsg.Visible = true;
+                    LblSuccessionMsg.Text = response.Message;
+
                     LblErrorMsg.Visible = false;
-                    LblSucsessMsg.Visible = true;
-                    LblSucsessMsg.Text = "Order Succed";
                 }
                 else
                 {
-                    LblSucsessMsg.Visible = false;
+                    LblSuccessionMsg.Visible = false;
+
                     LblErrorMsg.Visible = true;
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }

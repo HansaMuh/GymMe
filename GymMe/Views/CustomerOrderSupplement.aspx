@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/GymMeSite.Master" AutoEventWireup="true" CodeBehind="CustomerOrderSupplement.aspx.cs" Inherits="GymMe.Views.CustomerOrderSupplement" %>
 <asp:Content ID="Content0" ContentPlaceHolderID="ContentPlaceHolder0" runat="server">
-    <title>Order Supplement | GymMe</title>+++
+    <title>Order Supplement | GymMe</title>
     <link href="../CSS/OrderSupplement.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -22,12 +22,16 @@
             </asp:TemplateField>
         </Columns>
     </asp:GridView>
-    <div class="ErrorMessage">
-        <asp:Label ID="LblErrorMsg" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
-    </div>
+
     <div class="Button">
         <asp:Button ID="ClearCart" runat="server" Text="Clear All Carts" OnClick="btnClearCart_Click" class="but-ac"/>
         <asp:Button ID="Checkout" runat="server" Text="Checkout Order" OnClick="btnCheckout_Click" class="but-ac"/>
+    </div>
+    <div>
+        <asp:Label ID="LblSuccessionMsg" runat="server" Text="" Visible="false" ForeColor="Green" />
+    </div>
+    <div>
+        <asp:Label ID="LblErrorMsg" runat="server" Text="Error Message" Visible="false" ForeColor="Red" />
     </div>
 
     <h1>
@@ -40,5 +44,4 @@
             <asp:BoundField DataField="Quantity" HeaderText="Quantity" SortExpression="Quantity" />
         </Columns>
     </asp:GridView>
-    <asp:Label ID="LblSucsessMsg" runat="server" Text="" Visible="false" ForeColor="Green" />
 </asp:Content>

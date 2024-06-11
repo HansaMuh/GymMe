@@ -24,6 +24,24 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.GridView UnhandledSituation;
 
         /// <summary>
+        /// LblSuccessionMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblSuccessionMsg;
+
+        /// <summary>
+        /// LblErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErrorMsg;
+
+        /// <summary>
         /// HandledSituation control.
         /// </summary>
         /// <remarks>

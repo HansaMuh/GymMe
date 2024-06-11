@@ -2,10 +2,12 @@
 using GymMe.Models;
 using GymMe.Modules;
 using System;
+using System.Web.UI;
 
 namespace GymMe.Views
 {
-    public partial class RegisterPage : System.Web.UI.Page
+
+    public partial class RegisterPage : Page
     {
 
         protected void Page_Load(object sender, EventArgs e)
@@ -23,6 +25,7 @@ namespace GymMe.Views
             DateTime dob = InputCalender.SelectedDate;
 
             Response<User> response = UserController.Register(name, email, gender, password, confirmPassword, dob);
+
             if (response.Success)
             {
                 LblErrorMsg.Visible = false;
@@ -34,6 +37,7 @@ namespace GymMe.Views
                 LblErrorMsg.Text = "Error:<br/>" + response.Message;
             }
         }
+
     }
 
 }

@@ -3,11 +3,14 @@ using GymMe.Models;
 using GymMe.Modules;
 using System;
 using System.Collections.Generic;
+using System.Web.UI;
 
 namespace GymMe.Views
 {
-    public partial class TransactionDetailCustomer : System.Web.UI.Page
+
+    public partial class TransactionDetailCustomer : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             int transactionId = int.Parse(Request["TransactionID"]);
@@ -19,5 +22,7 @@ namespace GymMe.Views
                 GridTransactionDetail.DataBind();
             }
         }
+
     }
+
 }

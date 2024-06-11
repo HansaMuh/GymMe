@@ -3,21 +3,20 @@ using GymMe.Models;
 using GymMe.Modules;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace GymMe.Views
 {
-    public partial class AdminManageSupplements : System.Web.UI.Page
+
+    public partial class AdminManageSupplements : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             Response < List < Supplement >>supplement= SupplementController.GetAll();
             GridSupplement.DataSource = supplement.Payload;
             GridSupplement.DataBind();
-
         }
 
         protected void GridViewSupplement_RowEditing(object sender, GridViewEditEventArgs e)
@@ -38,6 +37,7 @@ namespace GymMe.Views
                 GridSupplement.DataBind();
             }
         }
+
         protected void GridSupplement_SelectedIndexChanged(object sender, EventArgs e)
         {
         }
@@ -46,5 +46,7 @@ namespace GymMe.Views
         {
             Response.Redirect("AdminInsertSupplement.aspx");
         }
+
     }
+
 }

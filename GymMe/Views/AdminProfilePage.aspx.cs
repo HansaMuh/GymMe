@@ -3,20 +3,19 @@ using GymMe.Models;
 using GymMe.Modules;
 using GymMe.Utility;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
-using System.Web.UI.WebControls;
 
 namespace GymMe.Views
 {
-    public partial class AdminProfilePage : System.Web.UI.Page
+
+    public partial class AdminProfilePage : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
             RefreshData();
         }
+
         protected void RefreshData()
         {
             if (!IsPostBack)
@@ -32,7 +31,6 @@ namespace GymMe.Views
             }
         }
 
-
         protected void ButtonUpdateData_Click(object sender, EventArgs e)
         {
             User user = SessionManager.GetCurrentUser();
@@ -44,15 +42,22 @@ namespace GymMe.Views
                 DateTime dob = InputCalender.SelectedDate;
 
                 Response<User> response = UserController.UpdateProfile(user.UserID, name, email, gender, dob);
+
                 if (response.Success)
                 {
+                    LblSuccessionMsg.Visible = true;
+                    LblSuccessionMsg.Text = response.Message;
+
                     LblErrorMsgUpdate.Visible = false;
                 }
                 else
                 {
+                    LblSuccessionMsg.Visible = false;
+
                     LblErrorMsgUpdate.Visible = true;
                     LblErrorMsgUpdate.Text = "Error:<br/>" + response.Message;
                 }
+
                 RefreshData();
             }
         }
@@ -70,14 +75,21 @@ namespace GymMe.Views
 
                 if (response.Success)
                 {
+                    LblSuccessionPassMsg.Visible = true;
+                    LblSuccessionPassMsg.Text = response.Message;
+
                     LblErrorMsgUpdatePass.Visible = false;
                 }
                 else
                 {
+                    LblSuccessionPassMsg.Visible = false;
+
                     LblErrorMsgUpdatePass.Visible = true;
                     LblErrorMsgUpdatePass.Text = "Error:<br/>" + response.Message;
                 }
             }
         }
+
     }
+
 }

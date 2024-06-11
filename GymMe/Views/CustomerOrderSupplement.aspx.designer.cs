@@ -24,15 +24,6 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.GridView SupplementGrid;
 
         /// <summary>
-        /// LblErrorMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblErrorMsg;
-
-        /// <summary>
         /// ClearCart control.
         /// </summary>
         /// <remarks>
@@ -51,6 +42,24 @@ namespace GymMe.Views
         protected global::System.Web.UI.WebControls.Button Checkout;
 
         /// <summary>
+        /// LblSuccessionMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblSuccessionMsg;
+
+        /// <summary>
+        /// LblErrorMsg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErrorMsg;
+
+        /// <summary>
         /// GridViewCart control.
         /// </summary>
         /// <remarks>
@@ -58,14 +67,5 @@ namespace GymMe.Views
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridViewCart;
-
-        /// <summary>
-        /// LblSucsessMsg control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LblSucsessMsg;
     }
 }

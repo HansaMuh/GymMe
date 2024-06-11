@@ -3,26 +3,27 @@ using GymMe.Models;
 using GymMe.Modules;
 using GymMe.Utility;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace GymMe.Views
 {
-    public partial class LoginPages : System.Web.UI.Page
+
+    public partial class LoginPages : Page
     {
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (IsPostBack)
             {
-                if (Request.Cookies["username"] != null && Request.Cookies["password"] != null)
-                {
-                    inputusername.Text = Request.Cookies["username"].Value;
-                    inputpassword.Text = Request.Cookies["password"].Value;
-                    CheckBox.Checked = true;
-                }
+                return;
+            }
+
+            if (Request.Cookies["username"] != null && Request.Cookies["password"] != null)
+            {
+                inputusername.Text = Request.Cookies["username"].Value;
+                inputpassword.Text = Request.Cookies["password"].Value;
+                CheckBox.Checked = true;
             }
         }
 
@@ -30,12 +31,14 @@ namespace GymMe.Views
         {
             String name = inputusername.Text;
             String pass = inputpassword.Text;
-            Response<User> ayam = null;
+
             Response<User> response = UserController.Authenticate(name, pass);
+
             if (response.Success)
             {
                 SessionManager.SaveCurrentUser(response.Payload);
                 LblErrorMsg.Visible = false;
+
                 if (CheckBox.Checked)
                 {
                     Response.Cookies["username"].Value = name;
@@ -48,12 +51,12 @@ namespace GymMe.Views
                     Response.Cookies["username"].Expires = DateTime.Now.AddDays(-1);
                     Response.Cookies["password"].Expires = DateTime.Now.AddDays(-1);
                 }
+
                 if (response.Payload.UserRole.Equals("Customer"))
                 {
                     Response.Redirect("HomePageCustomer.aspx");
                 }
-
-                if (response.Payload.UserRole.Equals("Admin"))
+                else if (response.Payload.UserRole.Equals("Admin"))
                 {
                     Response.Redirect("AdminHomePage.aspx");
                 }
@@ -63,12 +66,13 @@ namespace GymMe.Views
                 LblErrorMsg.Visible = true;
                 LblErrorMsg.Text = "Error:<br/>" + response.Message;
             }
-
         }
 
         protected void BtnRegis_Click(object sender, EventArgs e)
         {
             Response.Redirect("RegisterPage.aspx");
         }
+
     }
+
 }
