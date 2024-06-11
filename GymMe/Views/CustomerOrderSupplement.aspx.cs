@@ -32,6 +32,7 @@ namespace GymMe.Views
                 Response<Supplement> response = SupplementController.Order(user.UserID, supplementId, quantity);
                 if (response.Success)
                 {
+                    LblSucsessMsg.Visible = false;
                     LblErrorMsg.Visible = false;
                 }
                 else
@@ -73,9 +74,12 @@ namespace GymMe.Views
                 if (response.Success)
                 {
                     LblErrorMsg.Visible = false;
+                    LblSucsessMsg.Visible = true;
+                    LblSucsessMsg.Text = "Order Succed";
                 }
                 else
                 {
+                    LblSucsessMsg.Visible = false;
                     LblErrorMsg.Visible = true;
                     LblErrorMsg.Text = "Error:<br/>" + response.Message;
                 }

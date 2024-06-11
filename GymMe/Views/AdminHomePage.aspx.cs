@@ -14,25 +14,12 @@ namespace GymMe.Views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Response<List<TransactionHeader>> TransactionH = TransactionHeaderController.GetAll();
-            HistoryViewTable.DataSource = TransactionH.Payload;
-            HistoryViewTable.DataBind();
+            String role = "Customer";
+            Response<List<User>> response = UserController.GetRole(role);
+            CustomerViewTable.DataSource = response.Payload;
+            CustomerViewTable.DataBind();
         }
 
-        protected void HistoryTableRow(object sender, GridViewRowEventArgs e)
-        {
-            if (e.Row.RowType == DataControlRowType.DataRow)
-            {
-                Button detail = (Button)e.Row.FindControl("Detail");
-                TransactionHeader transaction = (TransactionHeader)e.Row.DataItem;
-                detail.PostBackUrl = $"AdminHistoryDetailView.aspx?TransactionID={transaction.TransactionID}";
-            }
-        }
-
-        protected void HistoryViewTable_SelectedIndexChanged1(object sender, EventArgs e)
-        {
-            Response.Redirect("AdminHistoryDetailView.aspx");
-        }
     }
 }
 

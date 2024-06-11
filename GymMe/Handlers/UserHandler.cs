@@ -38,6 +38,19 @@ namespace GymMe.Handlers
             };
         }
 
+        public static Response<List<User>> GetRole(string role)
+        {
+            List<User> users = UserRepository.GetRole(role);
+            bool isEmpty = users.Count == 0;
+
+            return new Response<List<User>>()
+            {
+                Success = !isEmpty,
+                Message = isEmpty ? "There is no Users" : "",
+                Payload = users
+            };
+        }
+
         public static Response<User> Get(int id)
         {
             User user = UserRepository.Get(id);

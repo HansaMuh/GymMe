@@ -30,6 +30,11 @@ namespace GymMe.Repositories
             return Database.Users.FirstOrDefault(u => u.UserID == id);
         }
 
+        public static List<User> GetRole(string role)
+        {
+            return Database.Users.Where(u => u.UserRole.Equals(role, StringComparison.OrdinalIgnoreCase)).ToList();
+        }
+
         public static User Get(string name)
         {
             return Database.Users.FirstOrDefault(u => u.UserName.Equals(name, StringComparison.OrdinalIgnoreCase));

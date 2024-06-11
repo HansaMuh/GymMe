@@ -5,17 +5,13 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <h2>Home</h2>
     <p>Welcome back, Administrator!</p>
-    <asp:GridView ID="HistoryViewTable" class="GridHistory" runat="server" AutoGenerateColumns="False" OnSelectedIndexChanged="HistoryViewTable_SelectedIndexChanged1" OnRowDataBound="HistoryTableRow">
+    <asp:GridView ID="CustomerViewTable" class="GridHistory" runat="server" AutoGenerateColumns="False" >
         <Columns>
-            <asp:BoundField DataField="TransactionID" HeaderText="Transaction ID" SortExpression="TransactionID" />
             <asp:BoundField DataField="UserID" HeaderText="User ID" SortExpression="UserID" />
-            <asp:BoundField DataField="TransactionDate" DataFormatString="{0:d}" HeaderText="Transaction Date" SortExpression="TransactionDate" />
-            <asp:BoundField DataField="Status" HeaderText="Status" SortExpression="Status" />
-            <asp:TemplateField HeaderText="Action" ShowHeader="True">
-                <ItemTemplate>
-                    <asp:Button ID="Detail" runat="server" Text="View Details" CommandName="Select" class="but" />
-                </ItemTemplate>
-            </asp:TemplateField>
+            <asp:BoundField DataField="UserName" HeaderText="Customer Name" SortExpression="UserName" />
+            <asp:BoundField DataField="UserEmail" HeaderText="Customer Email" SortExpression="UserEmail" />
+            <asp:BoundField DataField="UserDOB" DataFormatString="{0:d}" HeaderText="User DOB" SortExpression="UserDOB" />
+            <asp:BoundField DataField="UserGender" HeaderText="Customer Gender" SortExpression="UserGender" />
         </Columns>
     </asp:GridView>
 </asp:Content>

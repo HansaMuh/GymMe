@@ -18,7 +18,7 @@
                 <a class="components" href="AdminHomePage.aspx">Home</a>
                 <a class="components" href="AdminManageSupplements.aspx">Manage Supplements</a>
                 <a class="components" href="AdminQuequePage.aspx">Order Queues</a>
-                <a class="components" href="AdminHistoryView.aspx">Order History</a>
+                <a class="components" href="AdminHistoryView.aspx">Order History</a>    
                 <a class="components" href="AdminReportPage.aspx">Transaction Reports</a>
             </div>
             <div class="logout">

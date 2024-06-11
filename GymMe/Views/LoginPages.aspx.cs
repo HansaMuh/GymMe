@@ -30,6 +30,7 @@ namespace GymMe.Views
         {
             String name = inputusername.Text;
             String pass = inputpassword.Text;
+            Response<User> ayam = null;
             Response<User> response = UserController.Authenticate(name, pass);
             if (response.Success)
             {
